@@ -1,6 +1,5 @@
 package com.advance.mgr.controller;
 
-
 import com.advance.mgr.common.ResultDto;
 import com.advance.mgr.model.StoreInfoModel;
 import com.advance.mgr.service.DemoService;
@@ -28,18 +27,20 @@ public class DemoController {
     DemoService demoService;
 
     @GetMapping(value = "/stores")
-    @ApiOperation(value = "查询全部的仓库信息", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ApiOperation(value = "查询全部的仓库信息", notes = "查询全部的仓库信息")
     public ResultDto<List<StoreInfoModel>> queryAllStoreInfo(){
         List<StoreInfoModel> storeInfoModels = demoService.queryAllStoreInfo();
         return ResultDto.success(storeInfoModels);
     }
 
     @RequestMapping("/profile")
+    @ApiOperation(value = "查询全部的仓库信息", notes = "查询全部的仓库信息")
     public String testProfile(){
         return serverPort;
     }
 
-    @RequestMapping(value = "/hello",method = RequestMethod.GET)
+    @GetMapping(value = "/hello")
+    @ApiOperation(value = "查询全部的仓库信息", notes = "查询全部的仓库信息")
     public String sayHello(){
         return "hello world";
     }

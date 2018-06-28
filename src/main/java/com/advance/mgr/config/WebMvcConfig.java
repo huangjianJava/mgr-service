@@ -59,8 +59,9 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     public void configureContentNegotiation(ContentNegotiationConfigurer c) {
         c.defaultContentType(MediaType.APPLICATION_JSON_UTF8);
     }
-    @Bean
-    public FreeMarkerViewResolver freeMarkerViewResolver() {
+
+	@Bean
+    public FreeMarkerViewResolver freeMarkerViewResolver(IcecResourcesBean icecResourcesBean) {
         FreeMarkerViewResolver resolver = new FreeMarkerViewResolver();
         resolver.setPrefix("");
         resolver.setSuffix(".ftl");
@@ -68,52 +69,34 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         resolver.setRedirectHttp10Compatible(false);
         resolver.setRequestContextAttribute("requestContext");
         resolver.setCache(false);
-
-        //Map<String,String> map =
-
-       // resolver.setAttributesMap(icecResourcesBean.getResources());
+        resolver.setAttributesMap(icecResourcesBean.getResources());
 
         return resolver;
     }
 
+    /**
+     * 启用资源前缀
+     * 例如 <link rel="stylesheet" href="${commonStatic}/common/jquery/css/jquery-ui.css">
+     */
+    @Configuration
+    @EnableConfigurationProperties({ IcecResourcesBean.class })
+    public static class IcecResourcesConfig {
+        @Bean
+        public Map<String, String> icecResources(IcecResourcesBean icecResourcesBean) {
+            return icecResourcesBean.getResources();
+        }
+    }
 
-//	@Bean
-//    public FreeMarkerViewResolver freeMarkerViewResolver(IcecResourcesBean icecResourcesBean) {
-//        FreeMarkerViewResolver resolver = new FreeMarkerViewResolver();
-//        resolver.setPrefix("");
-//        resolver.setSuffix(".ftl");
-//        resolver.setContentType("text/html; charset=UTF-8");
-//        resolver.setRedirectHttp10Compatible(false);
-//        resolver.setRequestContextAttribute("requestContext");
-//        resolver.setCache(false);
-//        resolver.setAttributesMap(icecResourcesBean.getResources());
-//
-//        return resolver;
-//    }
+    @ConfigurationProperties(prefix="icec")
+    public static class IcecResourcesBean {
+        private Map<String, String> resources;
 
-//    /**
-//     * 启用资源前缀
-//     * 例如 <link rel="stylesheet" href="${commonStatic}/common/jquery/css/jquery-ui.css">
-//     */
-//    @Configuration
-//    @EnableConfigurationProperties({ IcecResourcesBean.class })
-//    public static class IcecResourcesConfig {
-//        @Bean
-//        public Map<String, String> icecResources(IcecResourcesBean icecResourcesBean) {
-//            return icecResourcesBean.getResources();
-//        }
-//    }
-//
-//    @ConfigurationProperties(prefix="icec")
-//    public static class IcecResourcesBean {
-//        private Map<String, String> resources;
-//
-//        public Map<String, String> getResources() {
-//            return resources;
-//        }
-//
-//        public void setResources(Map<String, String> resources) {
-//            this.resources = resources;
-//        }
-//    }
+        public Map<String, String> getResources() {
+            return resources;
+        }
+
+        public void setResources(Map<String, String> resources) {
+            this.resources = resources;
+        }
+    }
 }
