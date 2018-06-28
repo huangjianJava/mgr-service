@@ -1,0 +1,211 @@
+
+.biaoge ul{
+	clear:both;
+}
+
+.biaoge li {
+	/*对ID为biaoge的标签里面的LI使用此CSS*/
+	list-style-type: none;
+	width: 140px;
+	line-height: 40px;
+	text-align: center;
+	float: left; /*这里很关键，有了它，li才会根据ul的宽度来换行*/
+	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+
+
+
+.biaoge li.biaotou {
+	background-color: #fefcf9;
+	border-bottom: 2px solid #ddd;
+	height: 42px;
+}
+
+
+
+.fast-a-Page {
+	height: 25px;
+	line-height: 18px;
+	/* width: 80px; */
+	border: 1px solid #c2c2c2;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 2px 8px 2px;
+	margin: 8px 0 5px 0;
+	color: #262626;
+}
+
+.fast-a-Page:hover {
+	color: #ffffff;
+	background: #DA061F;
+	border: 1px solid #DA061F;
+}
+
+.fast-li-add-mouseenter {
+	border-color: #d8061f;
+	color: #d8061f;
+}
+
+.fast-li-add-mouseleave {
+	border-color: #c2c2c2;
+	color: #c2c2c2;
+}
+
+.fast-li {
+	size: 12px;
+	color: #565656;
+	align:left;
+}
+
+.fast-li-money {
+	size: 12px;
+	color: #d9061f;
+	font-weight: bold;
+}
+
+.fast-div {
+	text-align: center;
+	width: 100%;
+	background-color: #fafafa;
+	border-top: 1px solid #ddd;
+	height: 36px;
+}
+
+.fast-li-add {
+	height: 24px;
+	line-height: 20px;
+	width: auto;
+	border: 1px solid #c2c2c2;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	display: inline-block;
+	padding: 2px 8px 3px;
+	color: #262626;
+}
+
+.fast-li-add:hover {
+	color: #d8061f;
+	border-color: #d8061f;
+}
+
+
+.border-solid-red {
+	border-top-right-radius: 0px; /*{cornerRadius}; */
+	border: 1px solid red;
+	border-left-width: 2px;
+	background: #ffffff /*{bgColorContent}*/  
+		 /*{url(images/ui-bg_flat_75_ffffff_40x100.png) bgImgUrlContent}*/ 
+		50% /*{bgContentXPos}*/ 50% /*{bgContentYPos}*/ repeat-x
+		/*{bgContentRepeat}*/;
+	color: #222222 /*{fcContent}*/;
+	border: 1px solid red;
+}
+
+.tip {
+	height: 32px;
+	width: 160px;
+	padding: px;
+	padding-top: 8px;
+	color: #999;
+}
+
+.error {
+	height: 32px;
+	color: #d9061f;
+	display: block;
+	line-height:32px;
+}
+
+.warning {
+	background-color: yellow;
+}
+
+.biaoge .leftT{
+	text-align:left;
+	padding-left:10px;
+}
+
+.biaoge .rightT{
+	text-align:right;
+	padding-right:18px;
+}
+
+.biaoge  .hover_N{
+	color: #C2C2C2;
+	border-color: #C2C2C2;
+}
+
+.biaoge  .hover_N:hover{
+	cursor: default;
+	color: #C2C2C2;
+	border-color: #C2C2C2;
+}
+
+.ul_parent:nth-child(2n+1) li {
+	 background-color: #E8E8E8; 
+}
+
+.biaoge .width-8{
+	width:100px;
+}
+
+
+.biaoge .width-7{
+	width:120px;
+	overflow: visible;
+/*   	height: 32px; */
+/*   	padding-top: 2px; */
+}
+
+.biaoge .width-6{
+	width:90px;
+}
+
+
+.biaoge .width-5{
+	width:90px;
+}
+
+.biaoge .width-4{
+	width:160px;
+	
+}
+
+.biaoge .width-3{
+	width:80px;
+}
+
+.biaoge .width-2{
+	width:150px;
+	overflow: hidden;
+    text-overflow: clip;
+
+}
+
+.biaoge .width-1{
+	width:160px;
+}
+
+.biaoge .width-T1{
+	width:210px;
+}
+
+.biaoge li.select_box {
+	overflow: visible;
+	width: 115px;
+/* 	text-align:left; */
+}
+
+.biaoge li.select_box .son_ul li{
+	width: 100%;
+/* 	text-align:left; */
+}
+
+.biaoge li.select_box b.select-down{
+	top:11px;
+}

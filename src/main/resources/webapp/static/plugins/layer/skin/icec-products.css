@@ -1,0 +1,23 @@
+#shoppingPartsPopup.layui-layer { box-shadow: none; background: none; }
+#shoppingPartsPopup .layui-layer-content { overflow: hidden; }
+#shoppingPartsPopup .no-data { color: #222; padding: 10px; background-color: #fff; }
+
+.mini-search-view { border: 1px solid #F00; box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); }
+.mini-search-view table { min-width:810px; }
+.mini-search-view table th { border-bottom: 1px solid #E4E4E4; font-size:14px;font-weight:bold;  }
+.mini-search-view table th, .mini-search-view table td { padding: 8px 5px; height:20px; line-height: 20px; vertical-align: top; }
+.mini-search-view .bg-row, .mini-search-view .pager-row { background-color: #f1f1f1; }
+.mini-search-view table .onsale-price { text-align: right; color:#D9061F; font-size:14px; font-weight:bold; }
+.mini-search-view table .product-action { width: 90px; text-align: center}
+.mini-search-view td.product-action a { 
+	height: 24px; line-height: 20px; width: auto; padding: 2px 8px 3px; 
+	border: 1px solid #C2C2C2; border-radius: 2px; display: none; color: #262626; 
+}
+.mini-search-view td.product-action a.disabled { cursor: not-allowed; box-shadow: none; opacity: 0.5; }
+.mini-search-view .product-brand div, .mini-search-view .product-store a { 
+	display:inline-block; max-width: 55px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; 
+}
+.mini-search-view .pager-row td { text-align: center;  }
+.mini-search-view .pager-row td>a { padding: 2px 8px; border: 1px solid #C2C2C2; border-radius: 5px; }
+.mini-search-view .pager-row td>a:hover { color: #ffffff; background-color: #DA061F; border: 1px solid #DA061F; }
+.mini-search-view .pager-row td>a.disabled { pointer-events: none; cursor: not-allowed; box-shadow: none; opacity: 0.5; }
