@@ -31,3 +31,19 @@ spring:
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 # 数据源相关配置 end
+#前端页面相关配置
+  freemarker:
+    template-loader-path: classpath:/webapp/templates/
+  http:
+    multipart:
+      enabled: true
+      max-file-size: 50485760
+      max-request-size: 50485760
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+icec:
+  resources:
+    webRoot: http://127.0.0.1:8082
+    commonStatic: http://127.0.0.1:8082/static
