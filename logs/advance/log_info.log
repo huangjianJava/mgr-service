@@ -19,3 +19,6 @@
 [2018-06-28 15:22:59.970] [ INFO] [main] com.advance.mgr.MapperTest Line:48  - Starting MapperTest on DESKTOP-NUO31MR with PID 15920 (started by Huangj in D:\MyGitHub\mgr-service)
 [2018-06-28 15:22:59.972] [ INFO] [main] com.advance.mgr.MapperTest Line:597 - The following profiles are active: test
 [2018-06-28 15:23:02.464] [ INFO] [main] com.advance.mgr.MapperTest Line:57  - Started MapperTest in 3.103 seconds (JVM running for 3.716)
+[2018-06-28 21:50:10.577] [ INFO] [main] com.advance.MgrServiceApplication Line:48  - Starting MgrServiceApplication on LAPTOP-DEHNG3M1 with PID 1608 (D:\MyGitHub\mgr-service\target\classes started by huangj in D:\MyGitHub\mgr-service)
+[2018-06-28 21:50:10.584] [ INFO] [main] com.advance.MgrServiceApplication Line:597 - The following profiles are active: test
+[2018-06-28 21:50:18.293] [ INFO] [main] com.advance.MgrServiceApplication Line:57  - Started MgrServiceApplication in 8.768 seconds (JVM running for 11.179)

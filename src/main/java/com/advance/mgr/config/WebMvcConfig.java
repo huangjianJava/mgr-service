@@ -13,7 +13,7 @@ import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
 import java.util.ArrayList;
@@ -21,29 +21,28 @@ import java.util.List;
 import java.util.Map;
 
 @Configuration
-public class WebMvcConfig extends WebMvcConfigurationSupport {
+public class WebMvcConfig extends WebMvcConfigurerAdapter {
+
     /**
-     * 处理静态资源和防止freeMark和swagger-ui冲突
+     * 处理静态资源和防止freeMarker和swagger-ui冲突
      * @param registry
      */
 	@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("swagger-ui.html")
                 .addResourceLocations("classpath:/META-INF/resources/");
-        registry.addResourceHandler("/webjars*")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/");
 
         registry.addResourceHandler("/static/**")
                 .addResourceLocations("classpath:/webapp/static/");
         super.addResourceHandlers(registry);
     }
+
     /**
      * 定制http消息转换器
-     *HttpMessageConverter支持@RequestMapping
+     * HttpMessageConverter支持@RequestMapping
      * 或@ExceptionHandler method的 @RequestBody method parameters
      * 和@ResponseBody method 返回值。 -- 比较长，
      * 其实就是支持handler (controller)的@RequestBody参数/@ResponseBody返回值。
-     *
      * @param converters
      */
     @Override
