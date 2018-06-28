@@ -1,12 +1,11 @@
 package com.advance.mgr.controller;
 
 import com.advance.mgr.common.ResultDto;
-import com.advance.mgr.model.StoreInfoModel;
+import com.advance.mgr.model.DemoModel;
 import com.advance.mgr.service.DemoService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,9 +27,9 @@ public class DemoController {
 
     @GetMapping(value = "/stores")
     @ApiOperation(value = "查询全部的仓库信息", notes = "查询全部的仓库信息")
-    public ResultDto<List<StoreInfoModel>> queryAllStoreInfo(){
-        List<StoreInfoModel> storeInfoModels = demoService.queryAllStoreInfo();
-        return ResultDto.success(storeInfoModels);
+    public ResultDto<List<DemoModel>> queryAllStoreInfo(){
+        List<DemoModel> demoModels = demoService.queryAllStoreInfo();
+        return ResultDto.success(demoModels);
     }
 
     @RequestMapping("/profile")

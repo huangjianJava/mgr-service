@@ -1,7 +1,7 @@
 package com.advance.mgr.service;
 
 import com.advance.mgr.mapper.StoreInfoMapper;
-import com.advance.mgr.model.StoreInfoModel;
+import com.advance.mgr.model.DemoModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,7 @@ public class DemoService {
      * 查询所有仓库信息
      * @return
      */
-    public List<StoreInfoModel> queryAllStoreInfo() {
+    public List<DemoModel> queryAllStoreInfo() {
         return storeInfoMapper.selectAll();
     }
 

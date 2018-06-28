@@ -1,7 +1,7 @@
 package com.advance.mgr.mapper;
 
 import com.advance.mgr.common.MyMapper;
-import com.advance.mgr.model.StoreInfoModel;
+import com.advance.mgr.model.DemoModel;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @date 2018/6/5
  */
 @Component
-public interface StoreInfoMapper extends MyMapper<StoreInfoModel> {
+public interface StoreInfoMapper extends MyMapper<DemoModel> {
 
     long countStoreInfo();
 
