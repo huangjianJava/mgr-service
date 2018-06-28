@@ -28,7 +28,7 @@
 		<mysql.version>5.1.30</mysql.version>
 		<mapper-spring-boot-starter.version>1.1.7</mapper-spring-boot-starter.version>
 		<pagehelper-spring-boot-starter.version>1.2.3</pagehelper-spring-boot-starter.version>
-		<freemarker.version>1.4.2.RELEASE</freemarker.version>
+		<!--<freemarker.version>1.4.2.RELEASE</freemarker.version>-->
 	</properties>
 
 	<dependencies>
@@ -46,12 +46,13 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- end -->
-		<!-- 添加fremarker-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-freemarker</artifactId>
-			<version>${freemarker.version}</version>
-		</dependency>
+
+		<!-- 添加freemarker -->
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-freemarker</artifactId>-->
+			<!--<version>${freemarker.version}</version>-->
+		<!--</dependency>-->
 
 		<!-- 导入配置文件处理器，配置文件进行绑定就会有提示 -->
 		<dependency>
@@ -73,11 +74,6 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>3.3.2</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>18.0</version>
 		</dependency>
 		<!-- end -->
 

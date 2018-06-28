@@ -39,7 +39,7 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
         // 指定mybatis的mapper文件的基包
         fb.setTypeAliasesPackage("com.advance.mgr.mapper");
         // 下边两句仅仅用于*.xml文件，如果整个持久层操作不需要使用到xml文件的话（只用注解就可以搞定），则不加
-        //指定 全局配置文件的位置 和 sql映射文件的位置
+        // 指定 全局配置文件的位置 和 sql映射文件的位置
         fb.setConfigLocation(new PathMatchingResourcePatternResolver().getResource("classpath:mybatis/mybatis-config.xml"));
         fb.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mybatis/mapper/*.xml"));
         return fb.getObject();
