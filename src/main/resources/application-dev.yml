@@ -1,0 +1,33 @@
+# 开发环境
+server:
+  port: 8082
+
+spring:
+  profiles: dev
+# 数据源相关配置 begin
+  datasource:
+    # 数据源基本配置
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.1.151:3306/advance
+    # url: jdbc:mysql://192.168.1.107:3307/advance  # home
+    type: com.alibaba.druid.pool.DruidDataSource
+    #   数据源其他配置 @ConfigurationProperties 扩展补充
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+# 数据源相关配置 end
