@@ -70,7 +70,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         resolver.setRequestContextAttribute("requestContext");
         resolver.setCache(false);
         resolver.setAttributesMap(icecResourcesBean.getResources());
-        
+
         return resolver;
     }
 

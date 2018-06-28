@@ -1,9 +1,12 @@
 # 测试环境
 server:
   port: 8083
+  contextPath: /webMgr
 
 spring:
   profiles: test
+  application:
+      name: mgr-service
 # 数据源相关配置 begin
   datasource:
     # 数据源基本配置
