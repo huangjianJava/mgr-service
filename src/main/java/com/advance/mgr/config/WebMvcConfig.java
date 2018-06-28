@@ -1,6 +1,7 @@
 package com.advance.mgr.config;
 
 import com.advance.mgr.common.TimestampFormatter;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -9,29 +10,40 @@ import org.springframework.format.FormatterRegistry;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @Configuration
-@EnableWebMvc
-public class WebMvcConfig extends WebMvcConfigurerAdapter {
+public class WebMvcConfig extends WebMvcConfigurationSupport {
     /**
-     * 处理静态资源
+     * 处理静态资源和防止freeMark和swagger-ui冲突
      * @param registry
      */
 	@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/webapp/static/");
+        registry.addResourceHandler("swagger-ui.html")
+                .addResourceLocations("classpath:/META-INF/resources/");
+        registry.addResourceHandler("/webjars*")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+
+        registry.addResourceHandler("/static/**")
+                .addResourceLocations("classpath:/webapp/static/");
         super.addResourceHandlers(registry);
     }
     /**
      * 定制http消息转换器
+     *HttpMessageConverter支持@RequestMapping
+     * 或@ExceptionHandler method的 @RequestBody method parameters
+     * 和@ResponseBody method 返回值。 -- 比较长，
+     * 其实就是支持handler (controller)的@RequestBody参数/@ResponseBody返回值。
+     *
      * @param converters
      */
     @Override
@@ -45,6 +57,21 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
             //System.out.println("--------------------------------- " + converter + " | " + converter.getSupportedMediaTypes());
         }
     }
+
+    /**
+     * 将对象转为json格式输出
+     * @param _halObjectMapper
+     * @return
+     */
+    @Bean
+    public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter(ObjectMapper _halObjectMapper) {
+        List<MediaType> mediaTypes = new ArrayList();
+        mediaTypes.addAll(MediaType.parseMediaTypes("text/plain; charset=utf-8,plain/text; charset=utf-8,application/json; charset=utf-8,application/hal+json; charset=UTF-8"));
+        MappingJackson2HttpMessageConverter jsonConverter = new MappingJackson2HttpMessageConverter();
+        jsonConverter.setSupportedMediaTypes(mediaTypes);
+        jsonConverter.setObjectMapper(_halObjectMapper);
+        return jsonConverter;
+    }
     /**
      *日期格式化 日期转换为时间戳
      * @param registry
@@ -54,12 +81,22 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         registry.addFormatter(new TimestampFormatter());
     }
 
-
+    /**
+     * 你可以使用一个ContentNegotiationManager来配置ExceptionHandlerExceptionResolver，
+     * 然后总是将请求的媒体类型处理成”application/json”。或者，你可能想插入一个定制的策略，
+     * 如果没有内容类型被请求时，使用一些逻辑来选择默认的内容类型--如XML或JSON。
+     * @param c
+     */
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer c) {
         c.defaultContentType(MediaType.APPLICATION_JSON_UTF8);
     }
 
+    /**
+     * FreeMarkerViewResolver视图解析器配置
+     * @param icecResourcesBean
+     * @return
+     */
 	@Bean
     public FreeMarkerViewResolver freeMarkerViewResolver(IcecResourcesBean icecResourcesBean) {
         FreeMarkerViewResolver resolver = new FreeMarkerViewResolver();
