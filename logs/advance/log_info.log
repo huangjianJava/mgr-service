@@ -28,3 +28,6 @@
 [2018-06-29 10:33:30.084] [ INFO] [main] com.advance.mgr.DemoBaseTest Line:48  - Starting DemoBaseTest on DESKTOP-NUO31MR with PID 6820 (started by Huangj in D:\MyGitHub\mgr-service)
 [2018-06-29 10:33:30.085] [ INFO] [main] com.advance.mgr.DemoBaseTest Line:597 - The following profiles are active: test
 [2018-06-29 10:33:33.961] [ INFO] [main] com.advance.mgr.DemoBaseTest Line:57  - Started DemoBaseTest in 4.288 seconds (JVM running for 5.041)
+[2018-06-29 14:53:16.279] [ INFO] [main] com.advance.mgr.DemoBaseTest Line:48  - Starting DemoBaseTest on DESKTOP-NUO31MR with PID 22908 (started by Huangj in D:\MyGitHub\mgr-service)
+[2018-06-29 14:53:16.288] [ INFO] [main] com.advance.mgr.DemoBaseTest Line:597 - The following profiles are active: test
+[2018-06-29 14:53:20.782] [ INFO] [main] com.advance.mgr.DemoBaseTest Line:57  - Started DemoBaseTest in 5.186 seconds (JVM running for 5.961)
