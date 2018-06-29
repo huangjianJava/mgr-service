@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.advance.mgr.mapper.sys.SysUserMapper">
+
+	<!--<resultMap id="BaseResultMap" type="com.mpys.scm.dto.user.SysUserResDto">-->
+		<!--<id column="id" jdbcType="BIGINT" property="id" />-->
+		<!--<id column="username" jdbcType="VARCHAR" property="userName" />-->
+		<!--<id column="name" jdbcType="VARCHAR" property="name" />-->
+		<!--<id column="password" jdbcType="VARCHAR" property="password" />-->
+		<!--<id column="email" jdbcType="VARCHAR" property="email" />-->
+		<!--<id column="sex" jdbcType="INTEGER" property="sex" />-->
+		<!--<id column="mobile" jdbcType="VARCHAR" property="mobile" />-->
+		<!--<id column="role_name" jdbcType="VARCHAR" property="roleName" />-->
+		<!--<id column="create_time" jdbcType="VARCHAR" property="createTime" />-->
+		<!--<id column="admin_flag" jdbcType="INTEGER" property="adminFlag" />-->
+	<!--</resultMap>-->
+
+	<insert id="insertUserIdAndRole">
+		 insert into t_sys_user_role(user_id, role_id) values
+		 <foreach collection="roleList" item="roleId" separator=",">
+			 (#{userId,jdbcType=BIGINT},#{roleId,jdbcType=BIGINT})
+		 </foreach>
+	</insert>
+
+</mapper>

@@ -31,3 +31,32 @@
 [2018-06-29 14:53:16.279] [ INFO] [main] com.advance.mgr.DemoBaseTest Line:48  - Starting DemoBaseTest on DESKTOP-NUO31MR with PID 22908 (started by Huangj in D:\MyGitHub\mgr-service)
 [2018-06-29 14:53:16.288] [ INFO] [main] com.advance.mgr.DemoBaseTest Line:597 - The following profiles are active: test
 [2018-06-29 14:53:20.782] [ INFO] [main] com.advance.mgr.DemoBaseTest Line:57  - Started DemoBaseTest in 5.186 seconds (JVM running for 5.961)
+[2018-06-29 17:22:51.237] [ INFO] [main] com.advance.mgr.MapperTest Line:48  - Starting MapperTest on DESKTOP-NUO31MR with PID 12100 (started by Huangj in D:\MyGitHub\mgr-service)
+[2018-06-29 17:22:51.250] [ INFO] [main] com.advance.mgr.MapperTest Line:597 - The following profiles are active: test
+[2018-06-29 17:22:56.846] [ INFO] [main] com.advance.mgr.MapperTest Line:57  - Started MapperTest in 6.344 seconds (JVM running for 7.106)
+[2018-06-29 17:28:59.022] [ INFO] [main] com.advance.mgr.MapperTest Line:48  - Starting MapperTest on DESKTOP-NUO31MR with PID 14548 (started by Huangj in D:\MyGitHub\mgr-service)
+[2018-06-29 17:28:59.024] [ INFO] [main] com.advance.mgr.MapperTest Line:597 - The following profiles are active: test
+[2018-06-29 17:29:03.510] [ INFO] [main] com.advance.mgr.MapperTest Line:57  - Started MapperTest in 5.079 seconds (JVM running for 5.748)
+[2018-06-29 17:31:00.929] [ INFO] [main] com.advance.mgr.MapperTest Line:48  - Starting MapperTest on DESKTOP-NUO31MR with PID 7332 (started by Huangj in D:\MyGitHub\mgr-service)
+[2018-06-29 17:31:00.930] [ INFO] [main] com.advance.mgr.MapperTest Line:597 - The following profiles are active: test
+[2018-06-29 17:31:05.592] [ INFO] [main] com.advance.mgr.MapperTest Line:57  - Started MapperTest in 5.452 seconds (JVM running for 6.201)
+[2018-06-29 17:34:27.526] [ INFO] [main] com.advance.mgr.MapperTest Line:48  - Starting MapperTest on DESKTOP-NUO31MR with PID 25140 (started by Huangj in D:\MyGitHub\mgr-service)
+[2018-06-29 17:34:27.528] [ INFO] [main] com.advance.mgr.MapperTest Line:597 - The following profiles are active: test
+[2018-06-29 17:34:32.143] [ INFO] [main] com.advance.mgr.MapperTest Line:57  - Started MapperTest in 5.29 seconds (JVM running for 6.081)
+[2018-06-29 17:39:25.803] [ INFO] [main] com.advance.mgr.MapperTest Line:48  - Starting MapperTest on DESKTOP-NUO31MR with PID 24368 (started by Huangj in D:\MyGitHub\mgr-service)
+[2018-06-29 17:39:25.805] [ INFO] [main] com.advance.mgr.MapperTest Line:597 - The following profiles are active: test
+[2018-06-29 17:42:11.150] [ INFO] [main] com.advance.mgr.MapperTest Line:48  - Starting MapperTest on DESKTOP-NUO31MR with PID 15252 (started by Huangj in D:\MyGitHub\mgr-service)
+[2018-06-29 17:42:11.151] [ INFO] [main] com.advance.mgr.MapperTest Line:597 - The following profiles are active: test
+[2018-06-29 17:42:15.816] [ INFO] [main] com.advance.mgr.MapperTest Line:57  - Started MapperTest in 5.26 seconds (JVM running for 6.001)
+[2018-06-29 17:43:34.434] [ INFO] [main] com.advance.mgr.MapperTest Line:48  - Starting MapperTest on DESKTOP-NUO31MR with PID 19772 (started by Huangj in D:\MyGitHub\mgr-service)
+[2018-06-29 17:43:34.436] [ INFO] [main] com.advance.mgr.MapperTest Line:597 - The following profiles are active: test
+[2018-06-29 17:43:39.085] [ INFO] [main] com.advance.mgr.MapperTest Line:57  - Started MapperTest in 5.311 seconds (JVM running for 5.956)
+[2018-06-29 17:44:51.139] [ INFO] [main] com.advance.mgr.MapperTest Line:48  - Starting MapperTest on DESKTOP-NUO31MR with PID 21820 (started by Huangj in D:\MyGitHub\mgr-service)
+[2018-06-29 17:44:51.141] [ INFO] [main] com.advance.mgr.MapperTest Line:597 - The following profiles are active: test
+[2018-06-29 17:44:55.630] [ INFO] [main] com.advance.mgr.MapperTest Line:57  - Started MapperTest in 5.133 seconds (JVM running for 5.823)
+[2018-06-29 17:48:24.998] [ INFO] [main] com.advance.mgr.MapperTest Line:48  - Starting MapperTest on DESKTOP-NUO31MR with PID 24712 (started by Huangj in D:\MyGitHub\mgr-service)
+[2018-06-29 17:48:25.000] [ INFO] [main] com.advance.mgr.MapperTest Line:597 - The following profiles are active: test
+[2018-06-29 17:48:29.744] [ INFO] [main] com.advance.mgr.MapperTest Line:57  - Started MapperTest in 5.451 seconds (JVM running for 6.51)
+[2018-06-29 17:51:42.373] [ INFO] [main] com.advance.mgr.MapperTest Line:48  - Starting MapperTest on DESKTOP-NUO31MR with PID 23788 (started by Huangj in D:\MyGitHub\mgr-service)
+[2018-06-29 17:51:42.374] [ INFO] [main] com.advance.mgr.MapperTest Line:597 - The following profiles are active: test
+[2018-06-29 17:51:47.187] [ INFO] [main] com.advance.mgr.MapperTest Line:57  - Started MapperTest in 5.334 seconds (JVM running for 6.189)

@@ -3,7 +3,7 @@
 	<!-- <jmxConfigurator/> 做日志监控的 -->
 	<include resource="org/springframework/boot/logging/logback/base.xml" />
 
-	<!--设置系统日志目录:user.dir指的是程序运行的当前目录 -->
+	<!--设置系统日sysuser.dir指的是程序运行的当前目录 -->
 	<property name="LOG_PATH" value="${user.dir}/logs" />
 	<property name="APPDIR" value="advance" />
 

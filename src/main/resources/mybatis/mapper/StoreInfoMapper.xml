@@ -6,4 +6,9 @@
         select count(1) from t_store_info;
     </select>
 
+
+    <insert id="insertTest">
+        insert into t_store_info(store_no, store_name, store_type) values (#{store_no},#{store_name},1)
+    </insert>
+
 </mapper>

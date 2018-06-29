@@ -22,6 +22,15 @@ public class MapperTest extends BaseTest {
 
         long size = storeInfoMapper.countStoreInfo();
         System.out.println("account:" + size);
+
+        DemoModel test = DemoModel.builder()
+                .storeNo("1111")
+                .storeName("深圳仓")
+                .storeAbbr("测试一下")
+                .storeType(1)
+                .build();
+        storeInfoMapper.insertSelective(test);
+
     }
 
 }

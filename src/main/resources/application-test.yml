@@ -12,7 +12,7 @@ spring:
     username: root    # 数据源基本配置
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.1.151:3306/advance
+    url: jdbc:mysql://192.168.1.151:3306/advance?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
     # url: jdbc:mysql://192.168.1.107:3307/advance  # home
     type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 5    #   数据源其他配置 @ConfigurationProperties 扩展补充

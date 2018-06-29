@@ -1508,7 +1508,7 @@
           elem.click();
           // Bring back focus for multiselects
           elem.focus();
-          // Prevent screen from scrolling if the user hit the spacebar
+          // Prevent screen from scrolling if the sys hit the spacebar
           e.preventDefault();
           // Fixes spacebar selection of dropdown items in FF & IE
           $(document).data('spaceSelect', true);

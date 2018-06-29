@@ -63,7 +63,7 @@ a {
 }
 
 /*one with pixels too! */
-/* NOTE - if the user were to increase his browser font size to 20px (chrome: Large), 
+/* NOTE - if the sys were to increase his browser font size to 20px (chrome: Large),
 			the above (68.75em) media query will be incorrectly ignored!!!
 			
 			Assuming 20px browser setting, we would expect to see this progression:
