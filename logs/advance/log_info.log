@@ -22,3 +22,9 @@
 [2018-06-28 21:50:10.577] [ INFO] [main] com.advance.MgrServiceApplication Line:48  - Starting MgrServiceApplication on LAPTOP-DEHNG3M1 with PID 1608 (D:\MyGitHub\mgr-service\target\classes started by huangj in D:\MyGitHub\mgr-service)
 [2018-06-28 21:50:10.584] [ INFO] [main] com.advance.MgrServiceApplication Line:597 - The following profiles are active: test
 [2018-06-28 21:50:18.293] [ INFO] [main] com.advance.MgrServiceApplication Line:57  - Started MgrServiceApplication in 8.768 seconds (JVM running for 11.179)
+[2018-06-29 10:32:40.895] [ INFO] [main] com.advance.mgr.DemoBaseTest Line:48  - Starting DemoBaseTest on DESKTOP-NUO31MR with PID 20004 (started by Huangj in D:\MyGitHub\mgr-service)
+[2018-06-29 10:32:40.906] [ INFO] [main] com.advance.mgr.DemoBaseTest Line:597 - The following profiles are active: test
+[2018-06-29 10:32:45.407] [ INFO] [main] com.advance.mgr.DemoBaseTest Line:57  - Started DemoBaseTest in 5.041 seconds (JVM running for 5.675)
+[2018-06-29 10:33:30.084] [ INFO] [main] com.advance.mgr.DemoBaseTest Line:48  - Starting DemoBaseTest on DESKTOP-NUO31MR with PID 6820 (started by Huangj in D:\MyGitHub\mgr-service)
+[2018-06-29 10:33:30.085] [ INFO] [main] com.advance.mgr.DemoBaseTest Line:597 - The following profiles are active: test
+[2018-06-29 10:33:33.961] [ INFO] [main] com.advance.mgr.DemoBaseTest Line:57  - Started DemoBaseTest in 4.288 seconds (JVM running for 5.041)
