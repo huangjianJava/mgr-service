@@ -18,12 +18,10 @@ public interface SysMenuMapper extends MyMapper<SysMenuModel> {
 
     /**
      * 返回按钮信息
-     *
      * @param ids     菜单id
-     * @param status  状态
      * @return       list<SysMenuModel>
      */
-    List<SysMenuModel> getButton(@Param("status") Integer status, @Param("ids") List<Long> ids);
+    List<SysMenuModel> getButton(@Param("ids") List<Long> ids);
 
     /**
      * 返回菜单信息(不包含按钮)

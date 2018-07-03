@@ -3,6 +3,7 @@ package com.advance.mgr.controller;
 import com.advance.mgr.common.ResultDto;
 import com.advance.mgr.model.DemoModel;
 import com.advance.mgr.service.DemoService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,6 +17,7 @@ import java.util.List;
  * @date 2018/5/25
  */
 @RestController
+@Api(description = "demo 相关接口")
 @RequestMapping("/demo")
 public class DemoController {
 

@@ -1,31 +1,23 @@
 package com.advance.mgr.dto.sys;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
- * TABLE_NAME:(t_sys_menu)
- *
- * @author liuzw
+ * @author huangj
+ * @Description: 菜单筛选查询 DTO
+ * @date 2018/6/28
  */
-
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class SysMenuQueryDto {
 
-
-    /**
-     * 菜单名称
-     */
     @ApiModelProperty(value = "菜单名称", name = "菜单名称")
     private String name;
-
-
-    /**
-     * 状态 1: 启用 0：停用
-     */
-    @ApiModelProperty(value = "状态 1: 启用 0：停用", name = "状态 1: 启用 0：停用")
-    private Integer status;
 
 }

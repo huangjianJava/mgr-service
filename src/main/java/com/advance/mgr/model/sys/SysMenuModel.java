@@ -52,7 +52,8 @@ public class SysMenuModel implements Serializable {
 	private String perms;
 
     /**
-     * 类型   0：目录   1：菜单   2：按钮
+     * 菜单类型
+     * 由 MenuTypeEnum 枚举维护
 	 */
     @Column(name = "type")
 	private Integer type;
