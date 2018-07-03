@@ -1,18 +1,17 @@
 package com.advance.mgr.service;
 
 import com.advance.mgr.dto.sys.SysRoleReqDto;
-import com.advance.mgr.dto.sys.SysUserReqDto;
 import com.advance.mgr.mapper.sys.SysRoleMapper;
-import com.advance.mgr.mapper.sys.SysUserMapper;
 import com.advance.mgr.model.sys.SysRoleModel;
-import com.advance.mgr.model.sys.SysUserModel;
 import com.advance.mgr.util.CopyDataUtil;
-import com.advance.mgr.util.EncryptMD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
+
+import java.util.List;
+
 
 /**
  * @author huangj
@@ -22,10 +21,17 @@ import org.springframework.util.CollectionUtils;
 @Service
 public class SysRoleService {
 
-    private static final String DEFULT_PASSWORD = "123456";
-
     @Autowired
     SysRoleMapper sysRoleMapper;
+
+    /**
+     * 查询角色对应有权限的菜单ID
+     * @param id    角色ID
+     * @return      菜单ID集合
+     */
+    public List<Integer> queryMenuByRoleId(Long id) {
+        return sysRoleMapper.getMenuByRoleId(id);
+    }
 
     /**
      * 新增角色

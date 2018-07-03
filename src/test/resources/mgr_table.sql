@@ -18,6 +18,7 @@ create table if not exists t_sys_role (
   id bigint(20) not null auto_increment,
   role_name varchar(100) not null default '' comment '角色名称',
   remark varchar(255) not null default '' comment '备注',
+  is_admin int(11) not null default0 comment '是否为管理员(0,否;1,是)' ,
   create_time timestamp not null default current_timestamp comment '创建时间',
   primary key (id)
 ) engine=innodb default charset=utf8 comment='角色表';

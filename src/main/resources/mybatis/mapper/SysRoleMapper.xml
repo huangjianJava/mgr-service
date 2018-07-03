@@ -13,6 +13,13 @@
 		<!--<id column="create_time" jdbcType="VARCHAR" property="createTime" />-->
 	<!--</resultMap>-->
 
+	<select id="getMenuByRoleId" resultType="java.lang.Integer">
+		select distinct(t.menu_id) from t_sys_role_menu t
+		left join t_sys_menu t1 on t.menu_id = t1.id
+		where t.role_id = #{roleId}
+		order by t.menu_id
+	</select>
+
 	<insert id="insertRoleIdAndMenu">
 		insert into t_sys_role_menu (`role_id`,`menu_id`) values
 		<foreach collection="menuList" item="menuId" separator=",">

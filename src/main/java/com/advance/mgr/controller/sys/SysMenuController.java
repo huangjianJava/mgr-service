@@ -10,18 +10,14 @@ import com.advance.mgr.service.SysMenuService;
 import com.advance.mgr.util.CopyDataUtil;
 import com.google.common.collect.Lists;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import javax.validation.Valid;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -52,7 +48,7 @@ public class SysMenuController {
 
     @ApiOperation(value = "新增菜单", notes = "新增菜单")
     @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResultDto<Boolean> createAMenu(@Validated @RequestBody SysMenuReqDto dto) {
+    public ResultDto<Boolean> createAMenu(@Valid @RequestBody SysMenuReqDto dto) {
         boolean createSuccess = sysMenuService.createAMenu(dto);
         return ResultDto.success(createSuccess);
     }

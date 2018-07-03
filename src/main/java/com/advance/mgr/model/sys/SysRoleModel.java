@@ -40,6 +40,12 @@ public class SysRoleModel implements Serializable {
 	private String remark;
 
     /**
+     * 是否为管理员(1,是;0,否)
+     */
+    @Column(name = "is_admin")
+    private Integer isAdmin;
+
+    /**
      * 创建时间
 	 */
     @Column(name = "create_time")
