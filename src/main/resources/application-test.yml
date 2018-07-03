@@ -56,5 +56,5 @@ spring:
 
 icec:
   resources:
-    webRoot: http://127.0.0.1:8082
-    commonStatic: http://127.0.0.1:8082/static
+    webRoot: http://127.0.0.1:8082/${server.contextPath}
+    commonStatic: http://127.0.0.1:8082/${server.contextPath}/static

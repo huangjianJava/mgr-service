@@ -1,0 +1,361 @@
+.container {
+    width: 1190px !important;
+}
+
+.login-top {
+    height: 66px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.login-top-hotline {
+    height: 50px;
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 920px;
+    margin-bottom: 10px;
+}
+
+.login-top-split {
+    height: 2px;
+    border-bottom: 2px solid #dddddd;
+}
+
+.login-top span {
+    height: 50px;
+    line-height: 50px;
+    font-family: 微软雅黑;
+    font-size: 18px;
+    color: #333333;
+}
+
+.hotline-icon {
+    height: 50px;
+    width: 40px;
+    background: url(../../images/login/icon-new-1.png) -175px -1372px no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.login-container {
+    height: 470px;
+    background-color: #F3F3F3;
+    font-family: SimSun;
+}
+
+.login-container .container {
+    width: 1190px;
+    margin-top: 35px;
+    height: 391px;
+    border: 1px solid #e8e8e8;
+}
+
+.login-container .slider-wrapper {
+    float: left;
+    height: 389px;
+    width: 788px;
+}
+
+.login-container .login-body {
+    float: left;
+    width: 400px;
+    height: 389px;
+    border-left: 1px solid #e6e6e6;
+    padding: 29px;
+    background-color: #ffffff;
+    padding-top: 5px;
+}
+
+.login-container .login-form > li {
+    height: 30px;
+    margin-top: 5px;
+}
+
+.login-container .login-form > li.message {
+    padding-top: 7px;
+    height: 26px;
+}
+
+.login-container .login-form > li.auto-login-li {
+    margin-top: 0px;
+    height: 38px;
+}
+
+.login-container .login-form .auto-login {
+    width: 50%;
+    text-align: left;
+    position: relative;
+}
+
+.login-container .login-form .auto-login a {
+    cursor: default;
+    margin-left: 20px;
+}
+
+.login-container .login-form .auto-login b {
+    background-image: url(../../images/login/icon-new-1.png);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-position: 0px -1017px;
+}
+
+.login-container .login-form .auto-login b.active {
+    background-position: -60px -1017px
+}
+
+.login-container .login-form .look-for-pwd {
+    width: 50%;
+    text-align: right
+}
+
+.login-container .login-form .look-for-pwd .change-login-way{
+    font-family: "Microsoft YaHei", "微软雅黑";
+    font-size: 12px;
+    color: #565656;
+    padding-right: 10px;
+    border-right: 1px solid #e8e8e8;
+    height: 12px;
+    margin-right: -5px;
+}
+
+.login-container .login-form .look-for-pwd .find-pwd{
+    font-family: "Microsoft YaHei", "微软雅黑";
+    font-size: 12px;
+    color: #666666;
+    margin-left: 10px;
+    height: 12px;
+}
+
+.login-container .login-form > li > i {
+    position: absolute;
+    display: block;
+    width: 18px;
+    height: 18px;
+    top: 11px;
+    left: 6px;
+    background-image: url(../../images/login/icon-new-2.png);
+}
+
+.login-container .login-form .title {
+    height: 50px;
+    padding-top: 24px;
+}
+
+.login-container .login-form .title h3 {
+    font-size: 20px;
+    color: #666;
+}
+
+.login-container .login-form .title a {
+    padding-left: 21px;
+    font-size: 14px;
+    color: #e22e33;
+    background-image: url(../../images/login/icon-new-2.png);
+    background-position: -240px 3px;
+}
+
+.login-container .login-form .title a > span {
+    display: block;
+    background-color: white;
+    height: 21px;
+    line-height: 21px;
+}
+
+.login-container .login-form .message > div {
+    position: relative;
+    padding-left: 23px;
+    color: #e22e33;
+    height: 23px;
+    line-height: 23px;
+    background-color: #f0f0f0;
+    background-image: url(../../images/login/icon-new-2.png);
+    background-position: -236px -355px;
+    background-repeat: no-repeat;
+}
+
+.login-container .login-form .input {
+    height: 64px;
+    position: relative;
+}
+
+.login-container .login-form .input > input {
+    border: 1px solid #bdbdbd;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #999;
+    padding-left: 30px;
+    border-radius: 3px;
+}
+
+.login-container .login-form .input > input:focus {
+    border: 1px solid #e22e33;
+}
+
+.login-container .login-form .i-username {
+    background-position: -60px 0px;
+}
+
+.login-container .login-form .i-password {
+    background-position: -120px 0px;
+}
+
+.login-container .login-form .i-cellPhone {
+    background-image: url(../../images/login/icon-phone.png);
+}
+
+.login-container .login-form .i-verificationCode {
+    background-image: url(../../images/login/icon-verification-code.png);
+}
+
+.login-container .login-form .acquire-verification-code{
+    display: inline-block;
+    position: relative;
+    top: -37px;
+    right: -118px;
+    width: 100px;
+    background-color: #f3f3f3;
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+    color: #262626;
+    height: 34px;
+    line-height: 34px;
+    cursor: pointer;
+}
+.login-container .login-form .click{
+    color: #999;
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    cursor: not-allowed;
+}
+
+.login-container .btn-submit {
+    background-color: #E22E33;
+    border: none;
+    font-size: 18px;
+    color: #FFF;
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    font-family: 微软雅黑;
+    padding-left: 14px;
+    letter-spacing: 10px;
+    border-radius: 3px
+}
+.login-container .btn-submit:hover{
+    background-color: #C21B20;
+}
+.login-container .btn-submit:active{
+    background-color: #C21B20;
+}
+
+footer, footer > div, footer > div > div {
+    padding-top: 15px;
+    color: #666666;
+}
+
+footer > div > div > a, footer > div > div > a:link, a:visited {
+    color: #666666;
+}
+
+footer span {
+    padding: 0 10px;
+}
+
+footer .copy-right {
+    font-family: Arial;
+}
+
+.to-register-div {
+    font-family: SimSun;
+    font-size: 13px;
+    color: #666666;
+    text-align: right;
+    height: 20px;
+    margin-top: 7px;
+}
+
+.to-register-div > a.register-a {
+    background-image: none !important;
+    background: none !important;;
+    color: #E22E33 !important;
+    font-family: SimSun !important;
+    font-size: 13px !important;
+    padding-left: 0px !important;
+}
+
+input[placeholder], [placeholder], *[placeholder] {
+    color: #999999 !important;
+}
+
+
+
+
+.layui-layer-border {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.08) !important;
+}
+
+.layui-layer-dialog {
+    border: 6px solid rgba(0, 0, 0, 0.15) !important;
+}
+
+.layui-layer-content {
+    font-family: "Microsoft YaHei", "微软雅黑";
+    font-size: 14px;
+    color: #333333;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+}
+
+.container-fluid > .container-fluid-bottom > a {
+    color: #666666;
+}
+
+.container-fluid > .container-fluid-bottom > span {
+    color: #C4C4C4;
+}
+
+.container-fluid > .increment-license {
+    color: #999999;
+}
+
+.login-container .login-form .li-hide{
+    display: none;
+}
+.login-container .login-form .li-show{
+
+}
+.login-container .login-form .blank-tip{
+    background-color: #ffff;
+    text-align: left;
+    height: 25px;
+}
+.login-container .login-form .error-message-tip{
+    background-color: #fcfcfc;
+    padding: 3px 2px 2px 5px;
+    text-align: left;
+    height: 25px;
+    display: none;
+}
+.login-container .login-form .error-message-tip .error-message{
+    display: inline-block;
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+    color: #E22E33;
+    width: 250px;
+}
+.login-container .login-form .error-message-tip .i-error-message{
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    top: 4px;
+    left: 1px;
+    background: url(../../images/login/icon-new-2.png) -180px 0px no-repeat;
+}

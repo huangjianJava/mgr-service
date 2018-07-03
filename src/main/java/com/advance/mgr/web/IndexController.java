@@ -16,10 +16,26 @@ import javax.servlet.http.HttpServletRequest;
 public class IndexController {
 
 
-    @GetMapping(value = "/")
+    @GetMapping(value = "/login")
+    public String toLogin(Model model, HttpServletRequest request) {
+
+        return "/index/login";
+    }
+
+    @GetMapping(value = "/index")
     public String toIndex(Model model, HttpServletRequest request) {
-        System.out.println("=========== toIndex ===========");
-        model.addAttribute("index", "验证第一个页面");
+
         return "/index/index";
+    }
+
+    @GetMapping(value = "/member")
+    public String toMember(Model model, HttpServletRequest request) {
+
+        return "/index/member-list";
+    }
+    @GetMapping(value = "/welcome")
+    public String toWelcome(Model model, HttpServletRequest request) {
+
+        return "/index/welcome";
     }
 }
