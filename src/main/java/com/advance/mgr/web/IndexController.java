@@ -19,13 +19,13 @@ public class IndexController {
     @GetMapping(value = "/login")
     public String toLogin(Model model, HttpServletRequest request) {
 
-        return "/index/login";
+        return "/index/login/login";
     }
 
     @GetMapping(value = "/index")
     public String toIndex(Model model, HttpServletRequest request) {
 
-        return "/index/index";
+        return "/index/common";
     }
 
     @GetMapping(value = "/member")

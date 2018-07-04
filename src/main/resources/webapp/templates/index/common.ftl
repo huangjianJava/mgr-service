@@ -93,7 +93,7 @@
             <dd>
                 <ul>
                     <li><a data-href="admin-role.html" data-title="角色管理" href="javascript:void(0)">角色管理</a></li>
-                    <li><a data-href="admin-permission.html" data-title="权限管理" href="javascript:void(0)">权限管理</a></li>
+                    <li><a data-href="/mgr-sys/resources/pages" data-title="权限管理" href="javascript:void(0)">权限管理</a></li>
                     <li><a data-href="admin-list.html" data-title="管理员列表" href="javascript:void(0)">管理员列表</a></li>
                 </ul>
             </dd>
@@ -141,7 +141,7 @@
     <div id="iframe_box" class="Hui-article">
         <div class="show_iframe">
             <div style="display:none" class="loading"></div>
-            <iframe scrolling="yes" frameborder="0" src="${webRoot}/index/welcome"></iframe>
+            <iframe scrolling="yes" frameborder="0" src="/mgr-sys/index/welcome"></iframe>
         </div>
     </div>
 </section>

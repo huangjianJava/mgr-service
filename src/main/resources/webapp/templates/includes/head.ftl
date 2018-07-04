@@ -25,7 +25,9 @@
 <script type="text/javascript" src="${commonStatic}/plugins/layer/2.4/layer.js"></script>
 <script type="text/javascript" src="${commonStatic}/plugins/h-ui/js/H-ui.min.js"></script>
 <script type="text/javascript" src="${commonStatic}/plugins/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
-
+<script type="text/javascript" src="${commonStatic}/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script type="text/javascript" src="${commonStatic}/plugins/jquery-validation/localization/messages_zh.js"></script>
+<script type="text/javascript" src="${commonStatic}/plugins/jquery-validation/additional-methods.min.js"></script>
 <!--请在下方写此页面业务相关的脚本-->
 <script type="text/javascript" src="${commonStatic}/plugins/jquery.contextmenu/jquery.contextmenu.r2.js"></script>
 
