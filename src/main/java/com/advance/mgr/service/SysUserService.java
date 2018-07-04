@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
@@ -26,7 +27,22 @@ public class SysUserService {
     private static final String DEFAULT_PASSWORD = "123456";
 
     @Autowired
-    SysUserMapper sysUserMapper;
+    private SysUserMapper sysUserMapper;
+
+    /**
+     * 通过账号查找用户信息
+     * @param userName
+     * @return
+     */
+    public SysUserModel queryByUserName(String userName) {
+        Example example = new Example(SysUserModel.class);
+        example.createCriteria().andEqualTo("userName",userName);
+        List<SysUserModel> sysUserModels = sysUserMapper.selectByExample(example);
+        if(CollectionUtils.isEmpty(sysUserModels)){
+            return null;
+        }
+        return sysUserModels.get(0);
+    }
 
     /**
      * 查询用户信息

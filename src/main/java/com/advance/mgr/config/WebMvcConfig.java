@@ -1,6 +1,7 @@
 package com.advance.mgr.config;
 
 import com.advance.mgr.common.TimestampFormatter;
+import com.advance.mgr.component.MyHandlerInterceptor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -12,6 +13,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
@@ -22,6 +24,13 @@ import java.util.Map;
 
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new MyHandlerInterceptor())
+                .addPathPatterns("/**")
+                .excludePathPatterns("/index/login.ftl");
+    }
 
     /**
      * 处理静态资源和防止freeMarker和swagger-ui冲突
