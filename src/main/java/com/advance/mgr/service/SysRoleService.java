@@ -25,6 +25,14 @@ public class SysRoleService {
     SysRoleMapper sysRoleMapper;
 
     /**
+     * 查询所有的角色
+     * @return
+     */
+    public List<SysRoleModel> queryAllRoles() {
+        return sysRoleMapper.selectAll();
+    }
+
+    /**
      * 查询角色对应有权限的菜单ID
      * @param id    角色ID
      * @return      菜单ID集合

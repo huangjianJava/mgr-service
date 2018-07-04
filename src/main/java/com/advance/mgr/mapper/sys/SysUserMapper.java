@@ -1,12 +1,13 @@
 package com.advance.mgr.mapper.sys;
 
 import com.advance.mgr.common.MyMapper;
+import com.advance.mgr.dto.sys.SysUserQueryDto;
+import com.advance.mgr.dto.sys.SysUserResDto;
 import com.advance.mgr.model.sys.SysUserModel;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author huangj
@@ -15,6 +16,13 @@ import java.util.Map;
  */
 @Component
 public interface SysUserMapper extends MyMapper<SysUserModel> {
+
+    /**
+     * 查询用户列表
+     * @param dto
+     * @return
+     */
+    List<SysUserResDto> getList(SysUserQueryDto dto);
 
     /**
      * 新增用户角色
