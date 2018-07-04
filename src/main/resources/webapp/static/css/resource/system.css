@@ -1,0 +1,615 @@
+.font-s-12-333333 {
+    font-family: "SimSun";
+    font-size: 12px;
+    color: #262626;
+}
+
+.font-s-12-666666 {
+    font-family: "SimSun";
+    font-size: 12px;
+    color: #565656;
+}
+
+.font-s-12-e43642 {
+    font-family: "SimSun";
+    font-size: 12px;
+    color: #e43642;
+}
+
+.font-s-12-2493da {
+    font-family: "SimSun";
+    font-size: 12px;
+    color: #2493da;
+}
+
+.font-s-12-999999 {
+    font-family: "SimSun";
+    font-size: 12px;
+    color: #999999;
+}
+
+.font-s-12-0a7fca {
+    font-family: "SimSun";
+    font-size: 12px;
+    color: #0a7fca;
+}
+
+.font-s-12-0a67b0 {
+    font-family: "SimSun";
+    font-size: 12px;
+    color: #0a67b0;
+}
+
+.font-s-12-0f6fbc {
+    font-family: "SimSun";
+    font-size: 12px;
+    color: #0f6fbc;
+}
+
+.font-s-12-185da4 {
+    font-family: "SimSun";
+    font-size: 12px;
+    color: #185da4;
+}
+
+.font-s-12-f18109 {
+    font-family: "SimSun";
+    font-size: 12px;
+    color: #f18109;
+}
+
+.font-s-14-ffffff {
+    font-family: "SimSun";
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.font-s-14-333333 {
+    font-family: "SimSun";
+    font-size: 14px;
+    color: #262626;
+}
+
+.font-s-14-de424d {
+    font-family: "SimSun";
+    font-size: 14px;
+    color: #de424d;
+}
+
+.font-a-12-666666 {
+    font-family: "Arial";
+    font-size: 12px;
+    color: #565656;;
+}
+
+.font-a-12-333333 {
+    font-family: "Arial";
+    font-size: 12px;
+    color: #262626;
+}
+
+.font-a-12-0a66af {
+    font-family: "Arial";
+    font-size: 12px;
+    color: #0a66af;
+}
+
+.font-a-12-e43642 {
+    font-family: "Arial";
+    font-size: 12px;
+    color: #e43642;
+}
+
+.font-a-14-e43642 {
+    font-family: "Arial";
+    font-size: 14px;
+    color: #e43642;
+}
+
+.font-a-14-333333 {
+    font-family: "Arial";
+    font-size: 14px;
+    color: #262626;
+}
+
+.font-a-12-0f6fbc {
+    font-family: "Arial";
+    font-size: 12px;
+    color: #0f6fbc;
+}
+
+.padding-left-10 {
+    padding-left: 10px;
+}
+
+.padding-left-25 {
+    padding-left: 25px;
+}
+
+.padding-right-10 {
+    padding-right: 10px;
+}
+
+.padding-right-20 {
+    padding-right: 20px;
+}
+
+.font-a-12-2493da {
+    font-family: "Arial";
+    font-size: 12px;
+    color: #2493da;
+}
+
+.font-s-16-333333 {
+    font-family: "SimSun";
+    font-size: 16px;
+    color: #262626;
+}
+
+.font-a-16-333333 {
+    font-family: "Arial";
+    font-size: 16px;
+    color: #262626;
+}
+
+.font-m-14-333333 {
+    font-family: "Microsoft YaHei", "微软雅黑";
+    font-size: 14px;
+    color: #262626;
+}
+
+.font-m-14-0a7fca {
+    font-family: "Microsoft YaHei", "微软雅黑";
+    font-size: 14px;
+    color: #0a7fca;
+}
+
+.font-m-14-de424d {
+    font-family: "Microsoft YaHei", "微软雅黑";
+    font-size: 14px;
+    color: #de424d;
+}
+
+.font-m-20-de424d {
+    font-family: "Microsoft YaHei", "微软雅黑";
+    font-size: 20px;
+    color: #de424d;
+}
+
+a.link-none:link,
+a.link-none:link:active,
+a.link-none:link:visited {
+    text-decoration: none;
+    outline: none;
+}
+
+a.link-none:link:hover {
+    text-decoration: underline;
+}
+
+.group-radio-btn {
+    cursor: pointer;
+    height: 24px;
+    width: 100px;
+    border: 1px dashed #c9c9c9;
+    display: inline-block;
+    line-height: 24px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.group-radio-btn.selected {
+    border-color: #e43642;
+    font-family: "SimSun";
+    font-size: 12px;
+    color: #e43642;;
+}
+
+.group-radio {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.group-radio > div {
+    display: inline-block;
+}
+
+.group-radio .group-radio-icon {
+    background: url(../image/icon-new-1.png?v=20170721) -60px -600px no-repeat;
+    height: 17px;
+    width: 20px;
+    vertical-align: middle;
+}
+
+.group-radio .group-radio-text {
+
+}
+
+.group-radio input {
+    display: none;
+}
+
+.group-radio.selected .group-radio-icon {
+    background: url(../image/icon-new-1.png?v=20170721) -120px -600px no-repeat;
+}
+
+.group-checkbox {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.group-checkbox .checked {
+}
+
+.group-checkbox input {
+    display: none;
+}
+
+.group-checkbox .checkbox-icon {
+    height: 16px;
+    width: 16px;
+    background: url(../image/Operation-center-icon.png?v=20170721) -180px 0px no-repeat;
+    margin: 0px auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.group-checkbox.checked .checkbox-icon {
+    background: url(../image/Operation-center-icon.png?v=20170721) -240px 0px no-repeat;
+}
+
+.group-checkbox .checkbox-text {
+    display: inline-block;
+    padding-left: 5px;
+}
+
+.check-multiple {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #E4E4E4;
+    margin-right: 10px;
+    width: auto;
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.check-multiple > input {
+    display: none;
+}
+
+.check-multiple text {
+    width: 100%;
+}
+
+.check-multiple.checked {
+    border-color: #E43642;
+}
+
+.check-multiple.checked .icon {
+    height: 12px;
+    width: 12px;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    overflow: hidden;
+    background: url(../image/Operation-center-icon.png?v=20170721) -180px -600px no-repeat;
+}
+
+.check-multiple .icon {
+    display: none;
+}
+
+.check-multiple.checked > input {
+    display: none;
+}
+
+.btn-save-blue {
+    background-color: #2493DA;
+    height: 32px;
+    width: 100px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "SimSun";
+    color: #FFFFFF;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-cancel-gray {
+    background-color: #DDDDDD;
+    height: 32px;
+    width: 100px;
+    text-align: center;
+    font-size: 14px;
+    font-family: "SimSun";
+    color: #565656;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/*  导航面包屑  --start--- */
+.all-area {
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: #f1f1f1;
+}
+
+.white-back {
+    background-color: #ffffff;
+}
+
+.menu-gray {
+    height: 30px;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+.menu-gray .menu-location {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url(../image/Operation-center-icon1.png?v=20170721) -120px 0px no-repeat;
+    top: 8px;
+}
+
+.menu-gray .menu-cake-line {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url(../image/Operation-center-icon1.png?v=20170721) -60px -480px no-repeat;
+    top: 12px;
+}
+
+.menu-gray .menu-cake-word {
+    margin-left: -12px;
+    line-height: 30px;
+    font-size: 12px;
+    font-family: "SimSun";
+    color: #128dda;
+    padding-right: 30px;
+}
+
+.menu-gray .mov-right {
+    float: right;
+}
+
+.menu-gray .link-history {
+    font-size: 12px;
+    font-family: "SimSun";
+    color: #128dda;
+    line-height: 30px;
+}
+
+.menu-gray .link-history-icon {
+    height: 16px;
+    width: 16px;
+    background: url(../image/Operation-center-icon1.png?v=20170721) -240px -600px no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 20px;
+    padding-left: 2px;
+}
+
+.link-history-back-icon {
+    height: 16px;
+    width: 16px;
+    background: url(../image/Operation-center-icon1.png?v=20170721) 0px -660px no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 20px;
+    padding-left: 2px;
+}
+
+.menu-gray .menu-word {
+    line-height: 30px;
+    font-size: 12px;
+    font-family: "SimSun";
+    color: #262626;
+    padding-right: 10px;
+}
+
+/*  导航面包屑  ---end--- */
+/* 表格*/
+.table-div {
+    background-color: #FFFFFF;
+    min-height: 600px;
+}
+
+.table-div .table-title {
+    height: 36px;
+    line-height: 36px;
+}
+
+.table-div .table-content table {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+.table-div .table-content table tr {
+    height: 40px;
+
+}
+
+.table-div .table-content table tr td {
+    border: solid #e4e4e4 1px;
+}
+
+.table-div .table-content table thead.background-f3 th {
+    border: solid #e4e4e4 1px;
+    background-color: #f3f3f3;
+}
+
+.table-div .table-content table thead th {
+    text-align: center;
+    height: 40px;
+    font-weight: inherit;
+}
+
+.table-div .table-content table tbody tr {
+    height: 48px;
+}
+
+.table-div .table-content table tbody tr:hover {
+    background-color: #FdF8F2;
+}
+
+.table-div .table-page > #kkpager {
+    text-align: right !important;
+}
+
+.table-div .table-page .page-total-record {
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+    line-height: 40px;
+    padding-left: 10px;
+}
+
+.table-div table .history-btn > a {
+    margin: 0;
+    width: 42px;
+    height: 16px;
+    display: inline-block;
+}
+
+.table-div table .history-btn .split-line {
+    width: 1px;
+    height: 13px;
+    border: 1px solid #E4E4E4;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.table-div .table-content .align-left {
+    text-align: left;
+    font-weight: inherit;
+}
+
+.seller-center-icon-5 {
+    background-image: url(../image/Seller-Center-icon5.png?v=20170721);
+    background-repeat: no-repeat;
+}
+
+.seller-center-icon-4 {
+    background-image: url(../image/Seller-Center-icon4.png?v=20170721);
+    background-repeat: no-repeat;
+}
+
+.operation-center-icon {
+    background-image: url(../image/Operation-center-icon.png?v=20170721);
+}
+
+.icon-c {
+    background-image: url(../image/icon-c.png?v=20170721);
+    background-repeat: no-repeat;
+}
+
+.input-required-icon {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-position: -120px -300px;
+}
+
+label.formerror {
+    color: #E22E33;
+}
+
+input.formerror {
+    border: 1px solid #E22E33 !important;
+}
+
+label.formerror {
+    padding-left: 26px;
+    padding-bottom: 2px;
+    color: #E22E33;
+    font-weight: 500;
+    vertical-align: middle;
+    position: relative;
+    line-height: normal !important;
+    margin-bottom: 5px !important; 
+}
+
+label.formerror:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: url(../image/icon-new-3.png?v=20170721) no-repeat -120px -1198px;
+    left: 6px;
+}
+
+label.formerror > i.error-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: url(../image/icon-new-3.png?v=20170721) no-repeat -120px -1198px;
+    left: 6px;
+}
+
+label.checked {
+    color: #4CB82F;
+    font-weight: 500;
+}
+
+label.checked:before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: url(../image/icon-new-3.png?v=20170721) no-repeat -60px -1198px;
+    left: 6px;
+}
+
+label.checked > i.validated_icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: url(../image/icon-new-3.png?v=20170721) no-repeat -60px -1198px;
+    left: 6px;
+}
+
+.query-btn {
+    width: 100px;
+    height: 30px;
+    padding: 0 0;
+}
+
+.td-operate-item {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.td-operate-item > a {
+    display: inline-block;
+}
+
+.td-operate-item > span {
+    display: inline-block;
+    margin-right: 3px;
+    margin-left: 3px;
+    color: #999999;
+    font-size: 12px;
+}
+
+.float-right {
+    display: block;
+    float: right;
+}
