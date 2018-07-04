@@ -4,18 +4,49 @@
  
 <mapper namespace="com.advance.mgr.mapper.sys.SysUserMapper">
 
-	<!--<resultMap id="BaseResultMap" type="com.mpys.scm.dto.user.SysUserResDto">-->
-		<!--<id column="id" jdbcType="BIGINT" property="id" />-->
-		<!--<id column="username" jdbcType="VARCHAR" property="userName" />-->
-		<!--<id column="name" jdbcType="VARCHAR" property="name" />-->
-		<!--<id column="password" jdbcType="VARCHAR" property="password" />-->
-		<!--<id column="email" jdbcType="VARCHAR" property="email" />-->
-		<!--<id column="sex" jdbcType="INTEGER" property="sex" />-->
-		<!--<id column="mobile" jdbcType="VARCHAR" property="mobile" />-->
-		<!--<id column="role_name" jdbcType="VARCHAR" property="roleName" />-->
-		<!--<id column="create_time" jdbcType="VARCHAR" property="createTime" />-->
-		<!--<id column="admin_flag" jdbcType="INTEGER" property="adminFlag" />-->
-	<!--</resultMap>-->
+	<resultMap id="BaseResultMap" type="com.advance.mgr.dto.sys.SysUserResDto">
+		<id column="id" jdbcType="BIGINT" property="id" />
+		<id column="username" jdbcType="VARCHAR" property="userName" />
+		<id column="name" jdbcType="VARCHAR" property="name" />
+		<id column="password" jdbcType="VARCHAR" property="password" />
+		<id column="email" jdbcType="VARCHAR" property="email" />
+		<id column="sex" jdbcType="INTEGER" property="sex" />
+		<id column="mobile" jdbcType="VARCHAR" property="mobile" />
+		<id column="role_name" jdbcType="VARCHAR" property="roleName" />
+		<id column="admin_flag" jdbcType="INTEGER" property="isAdmin" />
+	</resultMap>
+
+	<select id="getList" resultMap="BaseResultMap">
+		SELECT
+			t.`id`,
+			t.`username`,
+			t.`name`,
+			t.`email`,
+			t.`sex`,
+			t.`mobile`,
+			group_concat(t2.role_name) role_name
+		FROM
+			t_sys_user t
+		LEFT JOIN (
+			SELECT
+				group_concat(tt1.role_name) role_name,
+				tt2.user_id
+			FROM
+				t_sys_user_role tt2
+			LEFT JOIN t_sys_role tt1 ON tt1.id = tt2.role_id
+			GROUP BY
+				tt2.user_id
+		) t2 ON t.id = t2.user_id
+		where 1 = 1
+		<if test="userName != null and userName !=''">
+			and t.username like concat(concat('%',#{userName}),'%')
+		</if>
+		<if test="name != null and name !=''">
+			and t.name like concat(concat('%',#{name}),'%')
+		</if>
+		group by t.id
+		order by t.id
+	</select>
 
 	<insert id="insertUserIdAndRole">
 		 insert into t_sys_user_role(user_id, role_id) values

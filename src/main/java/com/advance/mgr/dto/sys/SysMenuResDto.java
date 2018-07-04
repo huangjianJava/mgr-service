@@ -9,11 +9,10 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 /**
- * TABLE_NAME:(t_sys_menu)
- *
- * @author liuzw
+ * @author huangj
+ * @Description:
+ * @date 2018/7/4
  */
-
 @Data
 @Builder
 @AllArgsConstructor
