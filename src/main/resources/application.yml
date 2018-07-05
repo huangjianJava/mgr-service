@@ -1,4 +1,4 @@
 # 激活指定环境文件
 spring:
   profiles:
-    active: dev
+    active: test

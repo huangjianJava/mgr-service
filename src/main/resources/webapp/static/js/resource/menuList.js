@@ -29,25 +29,28 @@ $(document).ready(function() {
         },
         success : function(data) {
             if (data && data.success) {
-            	var list ={};
+            	var list =new Array();
             	for(var i=0;i<data.data.length;i++) {
             		var map = new Map();
-            		map.put("id",data.data[i].id);
-            		map.put("name", data.data[i].name);
-        			map.put("pId", data.data[i].parentId);
+            		map["id"]=data.data[i].id;
+            		map["name"]= data.data[i].name;
+        			map["pId"] =data.data[i].parentId;
         			list.push(map);
-        			if(data.data[i].children.length>0) {
+        			if(data.data[i].children) {
         				for(var j=0;j<data.data[i].children.length;j++) {
         					var childMap = new Map();
-        					childMap.put("id",data.data[i].children[j].id);
-            				childMap.put("name", data.data[i].children[j].name);
-        					childMap.put("pId", data.data[i].children[j].parentId);
+        					childMap["id"]=data.data[i].children[j].id;
+            				childMap["name"]= data.data[i].children[j].name;
+        					childMap["pId"]= data.data[i].children[j].parentId;
         					list.push(childMap);
         				}
         				
         			}
             	}
-                zNodes = list;
+            	if (list.length>0){
+                    zNodes = list;
+                }
+
             }
         }
     });
@@ -57,7 +60,7 @@ $(document).ready(function() {
     var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
     var nodes = treeObj.getNodes();
     if (nodes.length > 0) {
-        if (nodes[0].children.length > 0) 
+        if (nodes[0].children && nodes[0].children.length > 0)
             treeObj.expandNode(nodes[0].children[0]);
     };
     
@@ -67,18 +70,26 @@ $(document).ready(function() {
         errorClass: "formerror",
         submitHandler: function (form) {
             layer.load();
+            var obj = new Object();
+
             $("#name").val($("#name").val().trim());
             $("#path").val($("#path").val().trim());
             $("#perms").val($("#perms").val().trim());
             $("#iconCls").val($("#iconCls").val().trim());
             $("#orderNum").val($("#orderNum").val().trim());
-            
+            obj.name= $("#name").val();
+            obj.path= $("#path").val();
+            obj.perms=$("#perms").val();
+            obj.iconCls=$("#iconCls").val();
+            obj.orderNum =$("#orderNum").val();
+            obj.parentId=$("#parentId").val();
+            obj.type=$("#type").val();
              $.ajax({
                   cache: false,
                   type: $("#methodType").val(),
                   contentType: "application/json",
                   url: "/mgr-sys/menu/add",
-                  data: JSON.stringify($('#menuSaveForm').serializeObject()),
+                  data: JSON.stringify(obj),
                   success: function () {
                       layer.closeAll();
                       layer.msg('菜单保存成功!', {
