@@ -533,8 +533,9 @@ input.formerror {
 }
 
 label.formerror {
-    padding-left: 26px;
-    padding-bottom: 2px;
+    float: right;
+    margin-left: 7px;
+    margin-top: 8px;
     color: #E22E33;
     font-weight: 500;
     vertical-align: middle;

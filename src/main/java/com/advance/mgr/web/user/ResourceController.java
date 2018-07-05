@@ -21,6 +21,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class ResourceController {
 
 
+
+
+
+
     @RequestMapping(value = "/pages", method = RequestMethod.GET)
     public String list(Model model, HttpServletRequest request) throws Exception {
         List<Resource> lists =Lists.newArrayList();

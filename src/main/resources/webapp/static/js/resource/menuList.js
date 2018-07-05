@@ -19,16 +19,35 @@ $(document).ready(function() {
     
     $.ajax({
         async : false,
-        cache : false,
-        type : 'GET',
+        type : 'POST',
         dataType : 'json',
-        url : '/mgr-sys/resources/listMenus',
+        data:JSON.stringify(new Object()),
+        contentType: "application/json",
+        url : '/mgr-sys/menu/list',
         error : function() {
             layer.msg('数据请求失败!', { icon: 2, time: 1000 });
         },
         success : function(data) {
             if (data && data.success) {
-                zNodes = data.data;
+            	var list ={};
+            	for(var i=0;i<data.data.length;i++) {
+            		var map = new Map();
+            		map.put("id",data.data[i].id);
+            		map.put("name", data.data[i].name);
+        			map.put("pId", data.data[i].parentId);
+        			list.push(map);
+        			if(data.data[i].children.length>0) {
+        				for(var j=0;j<data.data[i].children.length;j++) {
+        					var childMap = new Map();
+        					childMap.put("id",data.data[i].children[j].id);
+            				childMap.put("name", data.data[i].children[j].name);
+        					childMap.put("pId", data.data[i].children[j].parentId);
+        					list.push(childMap);
+        				}
+        				
+        			}
+            	}
+                zNodes = list;
             }
         }
     });
@@ -49,13 +68,16 @@ $(document).ready(function() {
         submitHandler: function (form) {
             layer.load();
             $("#name").val($("#name").val().trim());
-            $("#resourceValue").val($("#resourceValue").val().trim());
+            $("#path").val($("#path").val().trim());
+            $("#perms").val($("#perms").val().trim());
+            $("#iconCls").val($("#iconCls").val().trim());
+            $("#orderNum").val($("#orderNum").val().trim());
             
-             /*$.ajax({
+             $.ajax({
                   cache: false,
                   type: $("#methodType").val(),
                   contentType: "application/json",
-                  url: "#",
+                  url: "/mgr-sys/menu/add",
                   data: JSON.stringify($('#menuSaveForm').serializeObject()),
                   success: function () {
                       layer.closeAll();
@@ -80,10 +102,10 @@ $(document).ready(function() {
                           time: 3000
                       });
                   }
-              });*/
+              });
         },
         rules: {
-            code: {
+            perms: {
                 required: true,
                 checkCode:true
             },
@@ -91,28 +113,28 @@ $(document).ready(function() {
                 required: true,
                 checkBlank:true
             },
-            sequence: {
+            orderNum: {
                 required: true,
                 checkSeq:true
             }
         },
         messages: {
-            code: {
-                required: "菜单编码必填"
+            perms: {
+                required: "菜单授权必填"
             },
             name: {
                 required: "菜单名称必填"
             },
-           sequence: {
+           orderNum: {
                 required: "菜单序列必填",
             }
         }
     });
     
      $.validator.addMethod("checkCode", function(value, element) {
-         var regex = /^[a-zA-Z0-9_]+$/;
+         var regex = /^[a-zA-Z:]+$/;
          return this.optional(element) || (regex.test(value));
-     }, "只能由数字、字母及_组成");
+     }, "只能由字母和:组成");
      
      $.validator.addMethod("checkSeq", function(value, element) {
          var regex = /^[0-9]+$/;
@@ -201,18 +223,12 @@ function openAddMenus() {
     layer.open({
         type: 1,
         title: '新增菜单',
-        area: ['650px', '400px'],
+        area: ['650px', '550px'],
         content: $("#menuModal")
     });
     
     $(':input', '#menuSaveForm').not(':button, :submit, :reset, :hidden').val('').removeAttr('selected').removeAttr('disabled').removeAttr('readOnly');
     
-    var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
-    var nodes = treeObj.getSelectedNodes();
-    // 确保已经选择更改菜单项目
-    if (nodes && nodes.length > 0) {
-        $('#parentId').val(nodes[0].id);
-    }
     
 };
 
@@ -222,29 +238,16 @@ function openUpdateMenus(resourceId) {
     var nodes = treeObj.getSelectedNodes();
     // 确保已经选择更改菜单项目
     if (nodes && nodes.length > 0) {
-        
-        /*$.ajax({
-            url: "/systemMgr/resources/"+nodes[0].id+"/detail",
-            type: 'get',
-            dataType: 'json',
-            success: function (data) {
-                console.log(data);
-                if(data.data){
-                    var resource = data.data;
-                    $("#id").val(resource.id);
-                    $('#parentId').val(resource.parentId);
-                    $('#parentId').attr("disabled","disabled").attr('readOnly','readOnly');
-                    $("#code").val(resource.code).attr("disabled","disabled");
-                    $("#name").val(resource.name);
-                    $("#resourceValue").val(resource.resourceValue);
-                    $("#sequence").val(resource.sequence);
-                }
-            },
-            error: function (data, status) {
-            }
-        });*/
-        
-        
+      	var resource = nodes[0];
+        $("#type").val(resource.type);
+        $('#type').attr("disabled","disabled").attr('readOnly','readOnly');
+        $('#parentId').val(resource.parentId);
+        $('#parentId').attr("disabled","disabled").attr('readOnly','readOnly');
+        $("#name").val(resource.name);
+        $("#path").val(resource.path);
+        $("#perms").val(resource.perms);
+        $("#iconCls").val(resource.iconCls);
+        $("#orderNum").val(resource.orderNum);
         $("#methodType").val("PUT");
         $(':input', '#menuSaveForm').removeClass("formerror");
         $("[id$=error]").remove();
@@ -252,7 +255,7 @@ function openUpdateMenus(resourceId) {
         layer.open({
             type: 1,
             title: '修改菜单',
-            area: ['650px', '400px'],
+            area: ['650px', '550px'],
             content: $("#menuModal")
         });
         
