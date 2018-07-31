@@ -1,13 +1,18 @@
 package com.advance.mgr.controller;
 
 import java.util.concurrent.Future;
+import javax.validation.Valid;
+import com.advance.mgr.dto.login.UserLoginReqDto;
+import com.advance.mgr.exception.RestResponse;
+import com.advance.mgr.exception.definedException.ParameterValidException;
 import com.advance.mgr.service.AsyncTasks;
+import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author : hongcheng.wu
@@ -50,4 +55,15 @@ public class HelloController {
         String result = "任务全部完成，总耗时：" + (end - start) + "毫秒";
         return result;
     }
+
+    @PostMapping(value = "/exceptionTest", produces = MediaType.APPLICATION_JSON_VALUE)
+    public RestResponse<String> exceptionTest (@Valid @RequestBody UserLoginReqDto dto , BindingResult result)  throws ParameterValidException {
+        if (result.hasErrors()) {
+            throw new ParameterValidException("校验失败入参为空",
+                    result.getAllErrors());
+        }
+        return new RestResponse<>();
+    }
+
+
 }
