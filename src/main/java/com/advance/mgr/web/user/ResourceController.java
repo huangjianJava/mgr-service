@@ -1,20 +1,21 @@
 package com.advance.mgr.web.user;
 
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import javax.servlet.http.HttpServletRequest;
+import com.advance.mgr.dto.sys.SysMenuQueryDto;
+import com.advance.mgr.model.sys.SysMenuModel;
+import com.advance.mgr.service.SysMenuService;
 import com.advance.mgr.util.JsonResultFactory;
-import com.advance.mgr.web.user.model.Resource;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/resources")
@@ -22,53 +23,16 @@ public class ResourceController {
 
 
 
-
+    @Autowired
+    private SysMenuService sysMenuService;
 
 
     @RequestMapping(value = "/pages", method = RequestMethod.GET)
     public String list(Model model, HttpServletRequest request) throws Exception {
-        List<Resource> lists =Lists.newArrayList();
-        Resource resource = null;
-        for (int i = 0; i < 4 ; i++) {
-            if (i == 0) {
-                resource = new Resource();
-                resource.setId("417797760662958080");
-                resource.setName("开思假一罚N管理");
-                resource.setResourceValue("/systemMgr/compensation/compensationManage");
-                resource.setParentId("107");
-                resource.setSequence(8);
-                resource.setCode("COMPENSATION_INFO");
-                lists.add(resource);
-            } else if (i == 1) {
-                resource = new Resource();
-                resource.setId("417797659527487488");
-                resource.setName("开思假一罚N查询");
-                resource.setResourceValue("/systemMgr/compensation/compensationsearch");
-                resource.setParentId("107");
-                resource.setSequence(9);
-                resource.setCode("COMPENSATION_INFO");
-                lists.add(resource);
-            } else if (i == 2) {
-                resource = new Resource();
-                resource.setId("417797414051651584");
-                resource.setName("开思质保查询");
-                resource.setResourceValue("/systemMgr/compensation/compensationManage");
-                resource.setParentId("107");
-                resource.setSequence(10);
-                resource.setCode("COMPENSATION_INFO");
-                lists.add(resource);
-            }  else if (i == 3) {
-                resource = new Resource();
-                resource.setId("417797509149106176");
-                resource.setName("开思质保管理");
-                resource.setResourceValue("/systemMgr/compensation/compensationManage");
-                resource.setParentId("107");
-                resource.setSequence(11);
-                resource.setCode("WARRANTY_MGR_INFO");
-                lists.add(resource);
-            }
-        }
-        model.addAttribute("menus" , lists);
+        List<SysMenuModel> menuList = sysMenuService.queryMenus(new SysMenuQueryDto());
+
+
+        model.addAttribute("menus" , menuList);
         return "/resource/menuList";
     }
 
