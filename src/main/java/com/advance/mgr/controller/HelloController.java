@@ -1,16 +1,23 @@
 package com.advance.mgr.controller;
 
+import java.util.Random;
 import java.util.concurrent.Future;
 import javax.validation.Valid;
 import com.advance.mgr.dto.login.UserLoginReqDto;
 import com.advance.mgr.exception.RestResponse;
 import com.advance.mgr.exception.definedException.ParameterValidException;
+import com.advance.mgr.exception.definedException.SystemRuntimeException;
 import com.advance.mgr.service.AsyncTasks;
+import com.advance.mgr.service.ReteyService;
 import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.MediaType;
+import org.springframework.retry.RetryException;
+import org.springframework.retry.annotation.Recover;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,8 +36,15 @@ public class HelloController {
     @Autowired
     AsyncTasks asyncTasks;
 
+    @Autowired
+    ReteyService reteyService;
 
 
+    /**
+     * 测试自定义线程池异步处理功能
+     * @return
+     * @throws Exception
+     */
     @GetMapping("/task")
     public String task() throws Exception {
         long start = System.currentTimeMillis();
@@ -56,6 +70,13 @@ public class HelloController {
         return result;
     }
 
+    /**
+     * 测试自定义异常功能
+     * @param dto
+     * @param result
+     * @return
+     * @throws ParameterValidException
+     */
     @PostMapping(value = "/exceptionTest", produces = MediaType.APPLICATION_JSON_VALUE)
     public RestResponse<String> exceptionTest (@Valid @RequestBody UserLoginReqDto dto , BindingResult result)  throws ParameterValidException {
         if (result.hasErrors()) {
@@ -64,6 +85,18 @@ public class HelloController {
         }
         return new RestResponse<>();
     }
+
+    /**
+     * 重试测试
+     * @return
+     */
+    @GetMapping("/retry")
+    public void RetryTest() throws Exception {
+        reteyService.call();
+
+    }
+
+
 
 
 }
