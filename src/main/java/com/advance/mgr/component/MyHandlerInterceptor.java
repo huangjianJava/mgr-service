@@ -1,6 +1,8 @@
 package com.advance.mgr.component;
 
+import com.advance.mgr.common.annotation.RequestAuth;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -17,6 +19,14 @@ public class MyHandlerInterceptor implements HandlerInterceptor{
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         System.out.println("========== MyHandlerInterceptor preHandle 方法==========");
+
+        if(o instanceof HandlerMethod) {
+            HandlerMethod h = (HandlerMethod)o;
+            System.out.println("logName 值为:" + h.getMethodAnnotation(RequestAuth.class).logName());
+        }
+
+
+
 
 
         //        String username = (String)httpServletRequest.getSession().getAttribute("username");

@@ -1,5 +1,6 @@
 package com.advance.mgr.web;
 
+import com.advance.mgr.common.annotation.RequestAuth;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,7 @@ public class IndexController {
         return "/index/common";
     }
 
+    @RequestAuth(logName = "权限注解测试")
     @GetMapping(value = "/member")
     public String toMember(Model model, HttpServletRequest request) {
 

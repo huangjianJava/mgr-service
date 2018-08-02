@@ -25,11 +25,15 @@ import java.util.Map;
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
+    /**
+     * 拦截器
+     * @param registry
+     */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new MyHandlerInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns("/index/login.ftl");
+                .excludePathPatterns("/index/login");   // 登录url不做拦截
     }
 
     /**
