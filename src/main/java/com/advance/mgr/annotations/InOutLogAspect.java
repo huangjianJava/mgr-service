@@ -52,7 +52,7 @@ public class InOutLogAspect {
     @Before("aspect()")
     public void doBefore(final JoinPoint joinPoint) throws Exception {
         final JSONObject jsonObject = doJsonObject(joinPoint);
-        logger.info(toJSONString(jsonObject));
+        logger.info(jsonObject.toJSONString());
     }
 
     /**
@@ -67,9 +67,9 @@ public class InOutLogAspect {
     public void doAfterReturning(final JoinPoint joinPoint, final Object result) {
 
         final JSONObject jsonObject = doJsonObject(joinPoint);
-        jsonObject.put("outParams", result);
+        jsonObject.put("outParams", toJSONString(result));
 
-        logger.info(toJSONString(jsonObject));
+        logger.info(jsonObject.toJSONString());
     }
 
 
