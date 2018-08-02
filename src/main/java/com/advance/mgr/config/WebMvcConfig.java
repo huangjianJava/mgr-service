@@ -3,6 +3,9 @@ package com.advance.mgr.config;
 import com.advance.mgr.common.TimestampFormatter;
 import com.advance.mgr.component.MyHandlerInterceptor;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.Data;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -12,28 +15,63 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.util.CollectionUtils;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Configuration
+@Validated
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
     /**
      * 拦截器
      * @param registry
      */
+    @Autowired
+    private Map<String, CorsRegistrationConfig> config;
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new MyHandlerInterceptor())
                 .addPathPatterns("/**")
                 .excludePathPatterns("/index/login");   // 登录url不做拦截
+    }
+    /**
+     * @method
+     * @description 添加跨域配置
+     * @date: 2018/7/31 19:55
+     * @author: hongcheng.wu
+     * @param:
+     * @return
+     */
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        if (!CollectionUtils.isEmpty(config)) {
+            config.forEach((key, item) -> {
+                CorsRegistration cr = registry.addMapping(item.getMapping());
+                if (item.getAllowCredentials() != null) {
+                    cr.allowCredentials(item.getAllowCredentials());
+                }
+                if (StringUtils.isNotBlank(item.getAllowedOrigins())) {
+                    String[] allowedOriginArray = item.getAllowedOrigins().split(",");
+                    cr.allowedOrigins(allowedOriginArray);
+                }
+                if (StringUtils.isNotBlank(item.getAllowedMethods())) {
+                    String[] allowedMethodArray = item.getAllowedMethods().split(",");
+                    cr.allowedMethods(allowedMethodArray);
+                }
+                if (StringUtils.isNotBlank(item.getAllowedHeaders())) {
+                    String[] allowedHeaderArray = item.getAllowedHeaders().split(",");
+                    cr.allowedHeaders(allowedHeaderArray);
+                }
+            });
+        }
     }
 
     /**
@@ -148,4 +186,59 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
             this.resources = resources;
         }
     }
+
+    /**
+    * @Description: 跨域配置
+    * @author : hongcheng.wu
+    * @date Date : 2018/7/31 20:13
+    * @version V1.0
+    * @since JDK 1.8
+    */
+    @Configuration
+    @EnableConfigurationProperties({ CorsRegistrationConfig.class })
+    public static class CorsConfig {
+        @Bean
+        public Map<String, CorsRegistrationConfig> corsRegistrationConfig(CorsRegistrationConfig corsRegistrationConfig) {
+            Map<String, CorsRegistrationConfig> maps = new HashMap<>();
+            maps.put("cors", corsRegistrationConfig);
+            return maps;
+        }
+    }
+    /**
+    * @Description: 跨域信息
+    * @author : hongcheng.wu
+    * @date Date : 2018/7/31 19:51
+    * @version V1.0
+    * @since JDK 1.8
+    */
+    @Data
+    @ConfigurationProperties(prefix = "com.cors")
+    public static class CorsRegistrationConfig {
+        /**
+         * 描述 : 扫描地址
+         */
+        private String mapping = "/**";
+
+        /**
+         * 描述 : 允许cookie
+         */
+        private Boolean allowCredentials = true;
+
+        /**
+         * 描述 : 允许的域
+         */
+        private String allowedOrigins = "*";
+
+        /**
+         * 描述 : 允许的方法
+         */
+        private String allowedMethods = "POST,GET,DELETE,PUT";
+
+        /**
+         * 描述 : 允许的头信息
+         */
+        private String allowedHeaders = "*";
+
+    }
+
 }

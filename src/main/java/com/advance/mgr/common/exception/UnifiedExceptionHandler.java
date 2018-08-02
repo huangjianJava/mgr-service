@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * @Description:    统一的异常处理器
  * @date 2018/6/1
  */
+/*
 @ControllerAdvice
 public class UnifiedExceptionHandler {
 
@@ -33,3 +34,4 @@ public class UnifiedExceptionHandler {
     }
 
 }
+*/

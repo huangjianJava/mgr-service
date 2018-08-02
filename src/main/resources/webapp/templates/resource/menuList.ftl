@@ -51,11 +51,22 @@
    <div id="menuModal" class="resource-div" style="display:none;">
             <form id="menuSaveForm" action="#" method="POST">
               <input type="hidden" value="POST" name="methodType" id="methodType"/>
-              <input type="hidden" value="MENU" name="resourceType"/>
-              <input type="hidden" value="" name="id" id="id"/>
+        	
 
             <div class="form-group">
                 <table style="width: 100%" style="margin-top: 30px;">
+                	<tr>
+                        <td class="col-xs-3" style="text-align: right; padding: 10px;">
+                        <label for="parentId" class="control-label">类型：</label>
+                        </td>
+                        <td class="col-xs-9" style="text-align: left; padding: 10px;">
+                            <select class="form-input" id="type" name="type" >
+                                <option value="1">目录</option>
+                            	<option value="2">菜单</option>
+                            	<option value="3">按钮</option>
+                            </select>
+                        </td>
+                    </tr>
                     <tr>
                         <td class="col-xs-3" style="text-align: right; padding: 10px;">
                         <label for="parentId" class="control-label">父级菜单：</label>
@@ -72,14 +83,6 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="col-xs-3" style="text-align: right; padding: 10px;">
-                        <label for="code" class=" control-label"><i  class="icon-c input-required-icon"></i>菜单编码：</label>
-                        </td>
-                        <td class="col-xs-9" style="text-align: left; padding: 10px;">
-                            <input id="code" name="code" class="form-input" type="text" value="" maxlength="30" placeholder="菜单编码"/>
-                        </td>
-                    </tr>
-                    <tr>
                         <td  style="text-align: right; padding: 10px;">
                         <label for="name" class="control-label"><i  class="icon-c input-required-icon"></i>菜单名称：</label>
                         </td>
@@ -92,7 +95,23 @@
                         <label for="resourceValue" class=" control-label">菜单URL：</label>
                         </td>
                         <td  style="text-align: left; padding: 10px;">
-                            <input id="resourceValue" name="resourceValue" class="form-input" type="text" placeholder="菜单URL" maxlength="256" value=""/>
+                            <input id="path" name="path" class="form-input" type="text" placeholder="菜单URL" maxlength="256" value=""/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-xs-3" style="text-align: right; padding: 10px;">
+                        <label for="code" class=" control-label"><i  class="icon-c input-required-icon"></i>授权：</label>
+                        </td>
+                        <td class="col-xs-9" style="text-align: left; padding: 10px;">
+                            <input id="perms" name="perms" class="form-input" type="text" value="" maxlength="30" placeholder="授权"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  style="text-align: right; padding: 10px;">
+                        <label for="sequence" class=" control-label"><i  class="icon-c input-required-icon"></i>菜单图标：</label>
+                        </td>
+                        <td  style="text-align: left; padding: 10px;">
+                            <input id="iconCls" name="iconCls" class="form-input" type="text" placeholder="菜单图标" maxlength="30" value=""/>
                         </td>
                     </tr>
                     <tr>
@@ -100,9 +119,10 @@
                         <label for="sequence" class=" control-label"><i  class="icon-c input-required-icon"></i>菜单序列：</label>
                         </td>
                         <td  style="text-align: left; padding: 10px;">
-                            <input id="sequence" name="sequence" class="form-input" type="text" placeholder="菜单序列" maxlength="9" value=""/>
+                            <input id="orderNum" name="orderNum" class="form-input" type="text" placeholder="菜单序列" maxlength="9" value=""/>
                         </td>
                     </tr>
+                   
                 </table>
             <div align="center" style="padding-top: 10px;">
                 <button class="btn btn-info query-btn" type="submit">保存</button>
