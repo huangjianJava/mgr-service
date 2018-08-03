@@ -1,7 +1,37 @@
-[2018-08-01 17:24:34.272] [ INFO] [main] com.advance.MgrServiceApplication Line:48  - Starting MgrServiceApplication on DESKTOP-L9R10OS with PID 11820 (D:\hongcheng\mgr-service\target\classes started by cassmall in D:\hongcheng\mgr-service)
-[2018-08-01 17:24:34.279] [ INFO] [main] com.advance.MgrServiceApplication Line:597 - The following profiles are active: test
-[2018-08-01 17:24:41.257] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService 
-[2018-08-01 17:24:41.263] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService  'mySimpleAsync'
-[2018-08-01 17:24:41.266] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService 
-[2018-08-01 17:24:41.267] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService  'myAsync'
-[2018-08-01 17:24:42.568] [ INFO] [main] com.advance.MgrServiceApplication Line:57  - Started MgrServiceApplication in 9.062 seconds (JVM running for 10.149)
+[2018-08-03 09:29:04.868] [ INFO] [main] com.advance.MgrServiceApplication Line:597 - The following profiles are active: test
+[2018-08-03 09:29:08.447] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService 
+[2018-08-03 09:29:08.453] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService  'mySimpleAsync'
+[2018-08-03 09:29:08.456] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService 
+[2018-08-03 09:29:08.456] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService  'myAsync'
+[2018-08-03 09:29:12.653] [ INFO] [main] com.advance.MgrServiceApplication Line:57  - Started MgrServiceApplication in 8.791 seconds (JVM running for 9.601)
+[2018-08-03 09:31:05.325] [ INFO] [main] com.advance.MgrServiceApplication Line:597 - The following profiles are active: test
+[2018-08-03 09:31:08.893] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService 
+[2018-08-03 09:31:08.898] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService  'mySimpleAsync'
+[2018-08-03 09:31:08.902] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService 
+[2018-08-03 09:31:08.902] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService  'myAsync'
+[2018-08-03 09:31:13.059] [ INFO] [main] com.advance.MgrServiceApplication Line:57  - Started MgrServiceApplication in 8.832 seconds (JVM running for 9.614)
+[2018-08-03 09:32:32.553] [ INFO] [main] com.advance.MgrServiceApplication Line:597 - The following profiles are active: test
+[2018-08-03 09:32:36.114] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService 
+[2018-08-03 09:32:36.119] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService  'mySimpleAsync'
+[2018-08-03 09:32:36.123] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService 
+[2018-08-03 09:32:36.124] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService  'myAsync'
+[2018-08-03 09:32:37.924] [ INFO] [main] com.advance.MgrServiceApplication Line:57  - Started MgrServiceApplication in 6.454 seconds (JVM running for 7.31)
+[2018-08-03 09:34:41.288] [ INFO] [main] com.advance.MgrServiceApplication Line:597 - The following profiles are active: test
+[2018-08-03 09:34:45.888] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService 
+[2018-08-03 09:34:45.897] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService  'mySimpleAsync'
+[2018-08-03 09:34:45.903] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService 
+[2018-08-03 09:34:45.904] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService  'myAsync'
+[2018-08-03 09:34:48.283] [ INFO] [main] com.advance.MgrServiceApplication Line:57  - Started MgrServiceApplication in 8.144 seconds (JVM running for 9.876)
+[2018-08-03 09:41:11.094] [ INFO] [main] com.advance.MgrServiceApplication Line:597 - The following profiles are active: test
+[2018-08-03 09:41:15.759] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService 
+[2018-08-03 09:41:15.769] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService  'mySimpleAsync'
+[2018-08-03 09:41:15.775] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService 
+[2018-08-03 09:41:15.776] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService  'myAsync'
+[2018-08-03 09:41:18.291] [ INFO] [main] com.advance.MgrServiceApplication Line:57  - Started MgrServiceApplication in 8.401 seconds (JVM running for 10.035)
+[2018-08-03 09:43:07.868] [ INFO] [main] com.advance.MgrServiceApplication Line:597 - The following profiles are active: test
+[2018-08-03 09:43:12.517] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService 
+[2018-08-03 09:43:12.527] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService  'mySimpleAsync'
+[2018-08-03 09:43:12.535] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService 
+[2018-08-03 09:43:12.535] [ INFO] [main] com.advance.mgr.config.VisiableThreadPoolTaskExecutor Line:165 - Initializing ExecutorService  'myAsync'
+[2018-08-03 09:43:14.990] [ INFO] [main] com.advance.MgrServiceApplication Line:57  - Started MgrServiceApplication in 8.396 seconds (JVM running for 9.97)
+[2018-08-03 09:43:34.961] [ INFO] [http-nio-8083-exec-2] com.advance.mgr.rmsAuth.RmsAuthHandlerInterceptor Line:65  - profiles.active:test,rmsApplicationName:null,rmsSign:null,method:GET

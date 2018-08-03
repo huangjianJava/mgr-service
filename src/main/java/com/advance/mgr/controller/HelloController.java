@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.*;
  * @since JDK 1.8
  */
 @RestController
+@RequestMapping("/service")
 public class HelloController {
     private static final Logger logger = LoggerFactory.getLogger(HelloController.class);
 

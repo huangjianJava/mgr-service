@@ -66,3 +66,16 @@ com:
       mapping: /**
       allowCredentials: true
       allowedMethods: POST,GET,DELETE,PUT
+  rms:
+    properties:
+      application:
+        mgr-service:
+          serviceId: 127.0.0.1:8083
+          secret: ADSFHKW349546RFSGF
+          disabled: false
+          description: sample application
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false

@@ -2,6 +2,7 @@ package com.advance.mgr.config;
 
 import com.advance.mgr.common.TimestampFormatter;
 import com.advance.mgr.component.MyHandlerInterceptor;
+import com.advance.mgr.rmsAuth.RmsAuthHandlerInterceptor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
@@ -33,12 +34,35 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Autowired
     private Map<String, CorsRegistrationConfig> config;
 
+    //配置多个拦截器
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new MyHandlerInterceptor())
-                .addPathPatterns("/**")
-                .excludePathPatterns("/index/login.ftl");
+        this.excludePathPatterns(registry.addInterceptor(new MyHandlerInterceptor()));
+        this.excludePathPatterns(registry.addInterceptor(rmsAuthHandlerInterceptor()));
+
     }
+
+    public void excludePathPatterns(InterceptorRegistration registration){
+        //服务层
+        registration.addPathPatterns("/service/**");
+        //应用层
+        registration.addPathPatterns("/application/**").excludePathPatterns("/index/login.ftl");
+    }
+
+    /**
+     * @method
+     * @description 拦截器里面注入的属性需要交给容易管理 比如 Environment等
+     * @date: 2018/8/3 9:41
+     * @author: hongcheng.wu
+     * @param:
+     * @return
+     */
+    @Bean
+    public RmsAuthHandlerInterceptor rmsAuthHandlerInterceptor() {
+        return new RmsAuthHandlerInterceptor();
+    }
+
+
     /**
      * @method
      * @description 添加跨域配置
