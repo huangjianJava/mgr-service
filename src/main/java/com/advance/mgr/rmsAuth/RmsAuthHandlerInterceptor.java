@@ -64,16 +64,15 @@ public class RmsAuthHandlerInterceptor implements HandlerInterceptor {
         //日志
         log.info("profiles.active:{},rmsApplicationName:{},rmsSign:{},method:{}", profilesActive, rmsApplicationName, rmsSign, method);
 
-        //判断systemAppliation是否有效
-        if (!this.rmsProperties.getApplication().containsKey(rmsApplicationName)) {
-            throw new AuthException("unrecognized systemAppliation:" + rmsApplicationName);
-        }
-
-        //获得应用元数据
-        ApplicationMeta applicationMeta = rmsProperties.getApplication().get(rmsApplicationName);
-
         //判断环境(开发环境无需校验sign)
         if (!DEV_PROFILES.equals(profilesActive)) {
+            //判断systemAppliation是否有效
+            if (!this.rmsProperties.getApplication().containsKey(rmsApplicationName)) {
+                throw new AuthException("unrecognized systemAppliation:" + rmsApplicationName);
+            }
+
+            //获得应用元数据
+            ApplicationMeta applicationMeta = rmsProperties.getApplication().get(rmsApplicationName);
             //判断是否缺少认证信息
             if (StringUtils.isBlank(rmsSign)) {
                 throw new AuthException("missing required authentication parameters (rmsSign)");
