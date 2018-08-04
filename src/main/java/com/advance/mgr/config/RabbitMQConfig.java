@@ -1,12 +1,12 @@
 package com.advance.mgr.config;
 
-import com.advance.mgr.rabbitmq.RabbitmqConstant;
+import com.advance.mgr.rabbitmq.messageLog.RabbitmqLogConstant;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
 /**
  * @author : hongcheng.wu
@@ -17,6 +17,11 @@ import org.springframework.stereotype.Component;
  */
 @Configuration
 public class RabbitMQConfig {
+
+    @Value("${spring.rabbitmq.mgr-exchange}")
+    private String exchange;
+
+
 
     /**
      * @method
@@ -33,7 +38,7 @@ public class RabbitMQConfig {
 
     /**
      * @method
-     * @description 配置点对点交换机
+     * @description 配置日志交换机
      * @date: 2018/8/4 10:00
      * @author: hongcheng.wu
      * @param:
@@ -41,18 +46,23 @@ public class RabbitMQConfig {
      */
     @Bean
     public DirectExchange exchangeMessageLog() {
-        return new DirectExchange(RabbitmqConstant.EXCHANGE_MESSAGE_LOG.class.getSimpleName(), true, false);
+        return new DirectExchange(RabbitmqLogConstant.EXCHANGE_MESSAGE_LOG.class.getSimpleName(), true, false);
     }
 
     /**
-     * exchangeMessageLogDlx(死信交换机)
-     *
-     * @return DirectExchange
+     * @method
+     * @description 配置业务交换机
+     * @date: 2018/8/4 11:12
+     * @author: hongcheng.wu
+     * @param:
+     * @return
      */
     @Bean
-    public DirectExchange exchangeMessageLogDlx() {
-        return new DirectExchange(RabbitmqConstant.EXCHANGE_MESSAGE_LOG_DLX.class.getSimpleName(), true, false);
+    public DirectExchange exchangeMgrService() {
+        return new DirectExchange(exchange, true, false);
     }
+
+
 
 
 }

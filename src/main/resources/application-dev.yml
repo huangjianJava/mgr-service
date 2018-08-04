@@ -19,6 +19,9 @@ spring:
         simple:
           retry:
             enabled: true
+      mgr-exchange: mgr-service-exchange
+      queue: mgr-service-queue
+      rount-key: mgr-service-queue
 
   datasource:   # 数据源相关配置 begin
     username: root    # 数据源基本配置

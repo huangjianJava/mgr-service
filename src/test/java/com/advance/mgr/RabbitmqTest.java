@@ -3,10 +3,10 @@ package com.advance.mgr;
 import java.util.Date;
 import com.advance.mgr.dto.sys.SysRoleResDto;
 import com.advance.mgr.rabbitmq.RabbitmqProducers;
-import com.advance.mgr.rabbitmq.RabbitmqConstant;
 import com.advance.mgr.rabbitmq.RabbitmqMessage;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  * @author : hongcheng.wu
@@ -20,18 +20,29 @@ public class RabbitmqTest  extends BaseTest{
     @Autowired
     private RabbitmqProducers mq;
 
+    @Value("${spring.rabbitmq.mgr-exchange}")
+    private String exchange;
+
+    @Value("${spring.rabbitmq.rount-key}")
+    private String rountKey;
+
+    @Value("${spring.application.name}")
+    private String springApplicationName;
+
+
     @Test
     public void Test(){
         SysRoleResDto dto = new SysRoleResDto();
-        dto.setIsAdmin(1);
-        dto.setRoleName("测试");
-        dto.setRemark("测试");
+        dto.setIsAdmin(222);
+        dto.setRoleName("测试22222");
+        dto.setRemark("测试22222");
         RabbitmqMessage<SysRoleResDto> message = new RabbitmqMessage<>();
+        message.setSender(springApplicationName);
         message.setSendDate(new Date());
-        message.setExchange(RabbitmqConstant.EXCHANGE_MESSAGE_LOG.class.getSimpleName());
-        message.setRoutingKey(RabbitmqConstant.EXCHANGE_MESSAGE_LOG.SEND.name());
+        message.setExchange(exchange);
+        message.setRoutingKey(rountKey);
         message.setTimestamp(System.currentTimeMillis());
         message.setBody(dto);
-        mq.convertAndSend(RabbitmqConstant.EXCHANGE_MESSAGE_LOG.class.getSimpleName(),RabbitmqConstant.EXCHANGE_MESSAGE_LOG.SEND.name(),message);
+        mq.convertAndSend(exchange,rountKey,message);
     }
 }
