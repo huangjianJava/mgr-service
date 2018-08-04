@@ -1,6 +1,7 @@
 package com.advance.mgr.rabbitmq;
 
 import java.util.Date;
+import com.advance.mgr.rabbitmq.messageLog.MessageLogProducers;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,6 +27,10 @@ public class RabbitmqProducers {
     private AmqpTemplate amqpTemplate;
 
 
+    @Autowired
+    private MessageLogProducers messageLogProducers;
+
+
     /**
      * 描述 : Convert a Java object to an Amqp Message and send it to a specific exchange with a
      * specific routing key.
@@ -42,6 +47,7 @@ public class RabbitmqProducers {
         message.setRoutingKey(routingKey);
         message.setTimestamp(System.currentTimeMillis());
         this.amqpTemplate.convertAndSend(exchange, routingKey, message);
+        messageLogProducers.send(message);
 
     }
 

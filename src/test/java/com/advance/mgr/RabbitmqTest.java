@@ -33,9 +33,9 @@ public class RabbitmqTest  extends BaseTest{
     @Test
     public void Test(){
         SysRoleResDto dto = new SysRoleResDto();
-        dto.setIsAdmin(222);
-        dto.setRoleName("测试22222");
-        dto.setRemark("测试22222");
+        dto.setIsAdmin(1111);
+        dto.setRoleName("是否重新发送");
+        dto.setRemark("是否重新发送请求");
         RabbitmqMessage<SysRoleResDto> message = new RabbitmqMessage<>();
         message.setSender(springApplicationName);
         message.setSendDate(new Date());
