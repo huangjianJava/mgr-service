@@ -7,6 +7,21 @@ spring:
   profiles: dev
   application:
         name: mgr-service
+  rabbitmq:
+      host: 127.0.0.1
+      port: 5672
+      username: guest
+      password: guest
+      template:
+        retry:
+          enabled: true
+      listener:
+        simple:
+          retry:
+            enabled: true
+      mgr-exchange: mgr-service-exchange
+      queue: mgr-service-queue
+      rount-key: mgr-service-queue
 
   datasource:   # 数据源相关配置 begin
     username: root    # 数据源基本配置
@@ -66,3 +81,16 @@ com:
       mapping: /**
       allowCredentials: true
       allowedMethods: POST,GET,DELETE,PUT
+  rms:
+    properties:
+      application:
+        mgr-service:
+          serviceId: 127.0.0.1:8083
+          secret: ADSFHKW349546RFSGF
+          disabled: false
+          description: sample application
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false

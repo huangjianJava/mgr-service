@@ -18,6 +18,18 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Edgware.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -45,6 +57,22 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- end -->
+
+		<!-- spring-cloud-starter-netflix-ribbon 服务发现-负载均衡 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-ribbon</artifactId>
+		</dependency>
+
+		<!--添加amqp依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
 
 		<!-- 添加freemarker -->
 		<dependency>
@@ -84,6 +112,20 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 		<!-- end -->
+
+		<!--Apache Commons Codec软件包包含各种格式的简单编码器和解码器，如Base64和Hexadecimal-->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.10</version>
+        </dependency>
+		<!--Apache Commons Collections包中包含扩展和扩充Java Collections Framework的类型。-->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.0</version>
+		</dependency>
+
 
 		<!-- apache类库 -->
 		<dependency>
